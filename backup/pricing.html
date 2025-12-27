@@ -456,17 +456,30 @@
             font-size: 0.9rem;
         }
 
-        /* Free Scripts Section */
-        .free-scripts-section {
+        /* Free Trial Section */
+        .trial-section {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
             border: 1px solid rgba(16, 185, 129, 0.4);
             border-radius: 20px;
             padding: 3rem;
             text-align: center;
             margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .free-badge {
+        .trial-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(16, 185, 129, 0.1) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        .trial-badge {
             display: inline-block;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
@@ -479,130 +492,66 @@
             margin-bottom: 1.5rem;
         }
 
-        .free-scripts-section h2 {
+        .trial-section h2 {
             font-size: 2rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
-        .free-scripts-section > p {
+        .trial-section > p {
             color: var(--text-secondary);
             font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto 2rem;
         }
 
-        .free-scripts-grid {
+        .trial-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        .free-script-card {
-            background: rgba(10, 10, 15, 0.6);
+        .trial-feature {
+            background: rgba(10, 10, 15, 0.5);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
-        .free-script-card::before {
-            content: 'Coming Soon';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 15, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--success);
-            z-index: 10;
-            backdrop-filter: blur(4px);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .trial-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.75rem;
         }
 
-        .free-script-card:hover {
-            transform: none;
-            border-color: var(--border);
-        }
-
-        .free-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .free-script-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
+        .trial-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
 
-        .free-script-card > p {
+        .trial-feature p {
             color: var(--text-secondary);
             font-size: 0.85rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
         }
 
-        .free-details {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .free-details span {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--success);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .btn-free {
+        .btn-trial {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            width: 100%;
-            justify-content: center;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
         }
 
-        .btn-free:hover {
+        .btn-trial:hover {
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
         }
 
-        .free-note {
+        .trial-note {
             color: var(--text-muted);
             font-size: 0.85rem;
             margin-top: 1rem;
-        }
-
-        /* Paid Products Header */
-        .paid-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .paid-header h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .paid-header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
         }
 
         /* Downloads Section */
@@ -811,7 +760,6 @@
                 <li><a href="pricing.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="terms.html">Terms</a></li>
             </ul>
         </nav>
     </header>
@@ -835,93 +783,30 @@
             <p style="margin-top: 1rem;"><strong>Important:</strong> All products are original creations or properly licensed digital goods. We do not sell game copies, accounts, in-game currency, or hosting services.</p>
         </div>
 
-        <!-- Free Scripts Section -->
-        <div class="free-scripts-section">
-            <div class="free-badge">100% Free</div>
-            <h2>Free Scripts & Resources</h2>
-            <p>Download these scripts completely free. No payment, no signup, no strings attached. Perfect for getting started or testing your server setup.</p>
-
-            <div class="free-scripts-grid">
-                <!-- Free Script 1 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#128172;</div>
-                    <h3>Basic Chat System</h3>
-                    <p>Simple chat script with commands and formatting for FiveM servers.</p>
-                    <div class="free-details">
-                        <span>ESX/QBCore</span>
-                        <span>v1.2</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
+        <!-- Free Trial Section -->
+        <div class="trial-section">
+            <div class="trial-badge">Try Before You Buy</div>
+            <h2>Free Trial Resources</h2>
+            <p>Experience our quality before purchasing. Download free trial scripts and sample resources to test compatibility with your server.</p>
+            <div class="trial-features">
+                <div class="trial-feature">
+                    <span class="trial-icon">&#128187;</span>
+                    <h4>Trial Scripts</h4>
+                    <p>Sample FiveM scripts to test</p>
                 </div>
-
-                <!-- Free Script 2 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#128101;</div>
-                    <h3>Player Spawn Selector</h3>
-                    <p>Let players choose their spawn location from a customizable list.</p>
-                    <div class="free-details">
-                        <span>ESX/QBCore</span>
-                        <span>v2.0</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
+                <div class="trial-feature">
+                    <span class="trial-icon">&#127912;</span>
+                    <h4>Graphics Preview</h4>
+                    <p>Sample reshade and textures</p>
                 </div>
-
-                <!-- Free Script 3 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#127919;</div>
-                    <h3>Simple HUD</h3>
-                    <p>Lightweight HUD displaying health, armor, and hunger/thirst.</p>
-                    <div class="free-details">
-                        <span>ESX/QBCore</span>
-                        <span>v1.5</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
-                </div>
-
-                <!-- Free Script 4 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#128663;</div>
-                    <h3>Vehicle Keys</h3>
-                    <p>Basic vehicle key system with lock/unlock functionality.</p>
-                    <div class="free-details">
-                        <span>ESX/QBCore</span>
-                        <span>v1.0</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
-                </div>
-
-                <!-- Free Script 5 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#128176;</div>
-                    <h3>ATM Script</h3>
-                    <p>Functional ATM system for deposits, withdrawals, and transfers.</p>
-                    <div class="free-details">
-                        <span>ESX/QBCore</span>
-                        <span>v1.3</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
-                </div>
-
-                <!-- Free Script 6 -->
-                <div class="free-script-card">
-                    <div class="free-icon">&#128214;</div>
-                    <h3>Server Rules Display</h3>
-                    <p>Display server rules to players with a clean interface.</p>
-                    <div class="free-details">
-                        <span>Standalone</span>
-                        <span>v1.1</span>
-                    </div>
-                    <a href="#" class="btn btn-free">Download Free</a>
+                <div class="trial-feature">
+                    <span class="trial-icon">&#128196;</span>
+                    <h4>Documentation</h4>
+                    <p>Setup guides and examples</p>
                 </div>
             </div>
-
-            <p class="free-note">All free scripts include documentation and are regularly updated. No support included - join our Discord for community help.</p>
-        </div>
-
-        <!-- Paid Products Section Header -->
-        <div class="paid-header">
-            <h2>Premium Products</h2>
-            <p>Professional scripts with full support and regular updates</p>
+            <a href="#" class="btn btn-trial">Download Free Trial</a>
+            <p class="trial-note">No payment required. Includes documentation.</p>
         </div>
 
         <div class="products-grid">
@@ -1112,7 +997,6 @@
             <div class="payment-badges">
                 <span class="payment-badge">Stripe</span>
                 <span class="payment-badge">PayPal</span>
-                <span class="payment-badge">Square</span>
                 <span class="payment-badge">Visa</span>
                 <span class="payment-badge">Mastercard</span>
             </div>
@@ -1198,7 +1082,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Vanish Unleashed. All rights reserved. All products are original digital creations. FiveM, GTA V, and other game names are trademarks of their respective owners. We are not affiliated with Rockstar Games or Cfx.re.</p>
+            <p>&copy; 2024 Vanish Unleashed. All rights reserved. All products are original digital creations. FiveM, GTA V, and other game names are trademarks of their respective owners. We are not affiliated with Rockstar Games or Cfx.re.</p>
         </div>
     </footer>
 

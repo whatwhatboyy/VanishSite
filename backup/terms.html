@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vanish Unleashed Terms of Service - Read our terms and conditions for using our digital software products.">
+    <title>Terms of Service - Vanish Unleashed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --accent: #c084fc;
+            --accent-light: #e9d5ff;
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --border: #2a2a3e;
+            --text: #ffffff;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(192, 132, 252, 0.1), transparent);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg { width: 20px; height: 20px; fill: white; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 28px; height: 2px;
+            background: var(--text);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            padding-top: 80px;
+        }
+
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139, 92, 246, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--accent-light);
+            margin-bottom: 2rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .legal-content h2:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .legal-content p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .legal-content ul {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .legal-content li {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .legal-content strong {
+            color: var(--text);
+        }
+
+        .legal-content a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a, .footer-links span {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .payment-badges {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .payment-badges span {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .payment-badges .badge {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; }
+            .page-header h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                Vanish Unleashed
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html" class="nav-btn">Browse Products</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+
+        <section>
+            <div class="legal-content">
+                <span class="last-updated">Last Updated: December 2024</span>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing or using the Vanish Unleashed website and purchasing our products, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services or purchase our products.</p>
+                <p>These Terms apply to all visitors, users, and customers of our website and services.</p>
+
+                <h2>2. Description of Products and Services</h2>
+                <p>Vanish Unleashed sells digitally delivered scripts, server resources, and visual modification products. Our offerings include:</p>
+                <ul>
+                    <li>FiveM scripts and server resources (ESX, QBCore frameworks)</li>
+                    <li>RedM western roleplay scripts and resources</li>
+                    <li>GMod addons and server content</li>
+                    <li>Graphics packs, reshade presets, and visual enhancements</li>
+                    <li>Custom models, MLO interiors, and asset packs</li>
+                </ul>
+                <p><strong>All products are original creations or properly licensed digital goods.</strong> Products are intended for server owners, developers, and gamers for legitimate use.</p>
+                <p><strong>Important:</strong></p>
+                <ul>
+                    <li>Products are provided "as-is" without warranties of any kind</li>
+                    <li>Compatibility with specific frameworks or software is not guaranteed</li>
+                    <li>Product functionality may be affected by framework or game updates</li>
+                    <li>All products are delivered electronically after purchase</li>
+                </ul>
+
+                <h2>3. Customer Responsibilities</h2>
+                <p>By purchasing from Vanish Unleashed, you acknowledge and agree that:</p>
+                <ul>
+                    <li>You have the appropriate rights to operate a server (if applicable)</li>
+                    <li>You will use products in accordance with applicable game/framework terms</li>
+                    <li>You are solely responsible for how you use our products</li>
+                    <li>You are at least 18 years of age or have parental/guardian consent</li>
+                    <li>You will provide accurate information during the purchase process</li>
+                    <li>You will not resell or redistribute products without authorization</li>
+                </ul>
+
+                <h2>4. What We Do NOT Sell</h2>
+                <p>To be clear about the nature of our business, we do NOT sell:</p>
+                <ul>
+                    <li>Game copies, keys, or licenses</li>
+                    <li>Game accounts or login credentials</li>
+                    <li>In-game currency, items, or virtual goods</li>
+                    <li>Server hosting or infrastructure services</li>
+                    <li>Leaked, stolen, or pirated content</li>
+                    <li>Malicious, exploit, or cheat code</li>
+                </ul>
+                <p>Our products are original scripts, resources, and visual modification content only.</p>
+
+                <h2>5. Prohibited Uses</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Redistribute, resell, or share our products without authorization</li>
+                    <li>Use our products for commercial purposes without appropriate licensing</li>
+                    <li>Reverse engineer, decompile, or attempt to extract source code from our products</li>
+                    <li>Use our products in any way that violates applicable laws or regulations</li>
+                    <li>Misrepresent your identity or provide false information during purchase</li>
+                    <li>Attempt to circumvent any security measures or access restrictions</li>
+                </ul>
+
+                <h2>6. Intellectual Property</h2>
+                <p>All products, content, and materials provided by Vanish Unleashed are protected by intellectual property laws. Your purchase grants you a limited, non-exclusive, non-transferable license to use the product for personal purposes only.</p>
+                <p>You may not copy, modify, distribute, sell, or lease any part of our products or services without our express written permission.</p>
+
+                <h2>7. Third-Party Services and Software</h2>
+                <p>Our products are designed for use with FiveM, RedM, GMod, and other supported platforms. We are not affiliated with, endorsed by, or sponsored by Rockstar Games, Take-Two Interactive, Cfx.re, Facepunch Studios, or any of their subsidiaries.</p>
+                <p>FiveM, GTA V, GMod, and other product names are trademarks of their respective owners.</p>
+                <p>We make no guarantees regarding:</p>
+                <ul>
+                    <li>Continued compatibility with game or framework updates</li>
+                    <li>Actions taken by game publishers or framework developers</li>
+                    <li>Changes to platforms that may affect product functionality</li>
+                </ul>
+                <p>You acknowledge that game and framework updates may affect the functionality of our products.</p>
+
+                <h2>8. Payment and Billing</h2>
+                <p>All payments are processed securely through trusted third-party payment processors (Stripe and PayPal). By making a purchase, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete payment information</li>
+                    <li>Pay all charges at the prices in effect when incurred</li>
+                    <li>Pay any applicable taxes</li>
+                    <li>Accept the terms of service of the payment processor used</li>
+                </ul>
+                <p><strong>Billing Details:</strong></p>
+                <ul>
+                    <li>Charges will appear on your statement as "VANISH UNLEASHED" or similar</li>
+                    <li>All prices are in USD unless otherwise specified</li>
+                    <li>Payment is collected at the time of purchase</li>
+                    <li>We do not store your full credit card information on our servers</li>
+                </ul>
+                <p><strong>Disputes:</strong> If you have a billing issue, please contact us at billing@vanishunleashed.com before initiating a chargeback. We are committed to resolving disputes fairly and promptly.</p>
+
+                <h2>9. Digital Delivery and Acknowledgment</h2>
+                <p>All products are delivered electronically via email immediately after successful payment. You are responsible for:</p>
+                <ul>
+                    <li>Providing a valid email address at checkout</li>
+                    <li>Checking your spam/junk folder for delivery emails</li>
+                    <li>Contacting support if you do not receive your product within 24 hours</li>
+                </ul>
+
+                <p><strong>Delivery Acknowledgment:</strong></p>
+                <p>By completing a purchase, you acknowledge and agree that:</p>
+                <ul>
+                    <li>You are purchasing a <strong>digital product</strong> that will be delivered immediately</li>
+                    <li>Once delivery access is provided, you have received the product</li>
+                    <li>Downloading or accessing the product files constitutes receipt and use of the product</li>
+                    <li>Digital products cannot be "returned" in the traditional sense</li>
+                    <li>All sales are subject to our Refund Policy, which you have read and understood</li>
+                </ul>
+
+                <p><strong>Proof of Delivery:</strong></p>
+                <p>We maintain comprehensive delivery records including:</p>
+                <ul>
+                    <li>Email delivery confirmations with timestamps</li>
+                    <li>Download access logs (IP address, date, time)</li>
+                    <li>Product file access records</li>
+                    <li>Account activity logs</li>
+                </ul>
+                <p>These records serve as proof of product delivery and will be used to dispute any claims that products were not received.</p>
+
+                <h2>10. Refunds and Chargebacks</h2>
+                <p>Please refer to our <a href="refund.html">Refund Policy</a> for detailed information about refunds and cancellations.</p>
+
+                <p><strong>Chargeback Policy:</strong></p>
+                <p>By completing a purchase, you acknowledge and agree to the following regarding chargebacks and payment disputes:</p>
+                <ul>
+                    <li><strong>Contact Us First:</strong> Before initiating any dispute with your bank or payment provider, you MUST contact us at billing@vanishunleashed.com. We are committed to resolving all issues fairly and promptly.</li>
+                    <li><strong>Fraudulent Chargebacks:</strong> Filing a chargeback for a product you received and used, without first attempting to resolve the issue with us, constitutes fraud and theft of services.</li>
+                    <li><strong>Consequences:</strong> If you file a chargeback without contacting us first:
+                        <ul style="margin-top: 0.5rem;">
+                            <li>Your license to all purchased products will be immediately revoked</li>
+                            <li>Your account will be permanently banned from future purchases</li>
+                            <li>We reserve the right to pursue legal action for fraudulent chargebacks</li>
+                            <li>Your information may be shared with fraud prevention databases</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dispute Resolution:</strong> We maintain detailed records of all transactions, including IP addresses, download logs, email confirmations, and product access logs. This information will be provided to payment processors and financial institutions when disputing fraudulent chargebacks.</li>
+                </ul>
+                <p>We have a fair refund policy and are always willing to work with customers who have legitimate issues. There is no valid reason to file a chargeback without first contacting our support team.</p>
+
+                <h2>11. Disclaimer of Warranties</h2>
+                <p>Our products are provided "AS-IS" and "AS AVAILABLE" without any warranties of any kind, either express or implied, including but not limited to:</p>
+                <ul>
+                    <li>Warranties of merchantability or fitness for a particular purpose</li>
+                    <li>Warranties that products will be error-free or uninterrupted</li>
+                    <li>Warranties regarding future compatibility or functionality</li>
+                    <li>Warranties regarding the accuracy or reliability of any information</li>
+                </ul>
+
+                <h2>12. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law:</p>
+                <ul>
+                    <li>Vanish Unleashed shall not be liable for any indirect, incidental, special, consequential, or punitive damages</li>
+                    <li>Our total liability for any claim arising from your use of our products shall not exceed the amount you paid for the specific product</li>
+                    <li>We are not liable for any damages resulting from third-party actions, including software updates, service changes, or account actions</li>
+                </ul>
+
+                <h2>13. Indemnification</h2>
+                <p>You agree to indemnify and hold harmless Vanish Unleashed, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from:</p>
+                <ul>
+                    <li>Your use of our products</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of any rights of another party</li>
+                </ul>
+
+                <h2>14. Termination</h2>
+                <p>We reserve the right to terminate or suspend your access to our products and services at any time, without notice, for conduct that we believe:</p>
+                <ul>
+                    <li>Violates these Terms of Service</li>
+                    <li>Is harmful to other users, us, or third parties</li>
+                    <li>Is fraudulent or illegal</li>
+                </ul>
+
+                <h2>15. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to our website. Your continued use of our services after changes are posted constitutes acceptance of the modified terms.</p>
+                <p>We encourage you to review these Terms periodically for any changes.</p>
+
+                <h2>16. Governing Law</h2>
+                <p>These Terms of Service shall be governed by and construed in accordance with applicable laws. Any disputes arising from these terms shall be resolved through appropriate legal channels.</p>
+
+                <h2>17. Severability</h2>
+                <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in full force and effect.</p>
+
+                <h2>18. Entire Agreement</h2>
+                <p>These Terms, together with our Privacy Policy and Refund Policy, constitute the entire agreement between you and Vanish Unleashed regarding the use of our services.</p>
+
+                <h2>19. Contact Information</h2>
+                <p>For questions about these Terms of Service, please contact us at:</p>
+                <ul>
+                    <li>Email: <strong>legal@vanishunleashed.com</strong></li>
+                    <li>Support: <strong>support@vanishunleashed.com</strong></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        Vanish Unleashed
+                    </a>
+                    <p>Premium FiveM scripts, server resources, and digital products. Instant delivery.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><span>support@vanishunleashed.com</span></li>
+                        <li><span>billing@vanishunleashed.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vanish Unleashed. All rights reserved.</p>
+                <div class="payment-badges">
+                    <span>Secure payments:</span>
+                    <span class="badge">Stripe</span>
+                    <span class="badge">PayPal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
