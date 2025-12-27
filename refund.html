@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy - Vanish Unleashed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --accent: #c084fc;
+            --accent-light: #e879f9;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(139, 92, 246, 0.05);
+            --bg-card-hover: rgba(139, 92, 246, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(139, 92, 246, 0.2);
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
+            --gradient-2: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 100% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 40%),
+                        radial-gradient(ellipse at 0% 100%, rgba(232, 121, 249, 0.1) 0%, transparent 40%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 50%;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-light);
+            bottom: -175px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(0, 100px) scale(1); }
+            75% { transform: translate(-50px, 50px) scale(0.9); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        /* Quick Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--success);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-box ul {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+        }
+
+        .summary-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-box strong {
+            color: var(--text-primary);
+        }
+
+        /* Business Info Box */
+        .business-info {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .business-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .business-info p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Content Sections */
+        .policy-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul,
+        .policy-section ol {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section strong {
+            color: var(--text-primary);
+        }
+
+        /* Important Notice */
+        .notice-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid var(--warning);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .notice-box h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--warning);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .notice-box p {
+            color: var(--text-secondary);
+        }
+
+        /* Refund Process Steps */
+        .process-steps {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            font-weight: 700;
+            color: white;
+        }
+
+        .step-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--gradient-1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem;
+            }
+
+            main {
+                padding: 100px 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Vanish Unleashed</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Refund Policy</h1>
+            <p>We want you to be completely satisfied with your purchase. Here's our refund policy.</p>
+            <span class="effective-date">Effective Date: December 27, 2024</span>
+        </div>
+
+        <div class="summary-box">
+            <h3>Quick Summary</h3>
+            <ul>
+                <li><strong>Refund Window:</strong> 14 days from purchase date</li>
+                <li><strong>Eligibility:</strong> Product must not function as described</li>
+                <li><strong>Processing Time:</strong> 5-10 business days after approval</li>
+                <li><strong>Refund Method:</strong> Original payment method</li>
+            </ul>
+        </div>
+
+        <div class="business-info">
+            <h3>About Our Products</h3>
+            <p>We sell digitally delivered software products and services related to video games. Our offerings include custom-developed software tools, utilities, and configuration files designed to enhance user experience.</p>
+            <p>All products are delivered electronically after purchase. Customers must already own the original games that our products are designed to work with.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">1</span>Refund Eligibility</h2>
+            <p>We offer refunds under the following circumstances:</p>
+            <ul>
+                <li><strong>Technical Issues:</strong> The product does not function as described on the product page</li>
+                <li><strong>Delivery Failure:</strong> You did not receive the digital product after purchase</li>
+                <li><strong>Duplicate Purchase:</strong> You accidentally purchased the same product twice</li>
+                <li><strong>Compatibility Issues:</strong> The product is incompatible with your system despite meeting stated requirements</li>
+            </ul>
+            <p>All refund requests must be submitted within 14 days of the original purchase date.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">2</span>Refund Request Process</h2>
+            <p>To request a refund, please follow these steps:</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Contact Support</h4>
+                        <p>Email us at refunds@vanishunleashed.com with your order number and reason for the refund request.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Provide Details</h4>
+                        <p>Include your order confirmation, purchase date, and a detailed description of the issue you're experiencing.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Review Process</h4>
+                        <p>Our team will review your request within 2-3 business days and may request additional information.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Refund Processing</h4>
+                        <p>If approved, refunds are processed within 5-10 business days to your original payment method.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">3</span>Non-Refundable Situations</h2>
+            <p>Refunds will not be issued in the following situations:</p>
+            <ul>
+                <li>Request made more than 14 days after purchase</li>
+                <li>Change of mind or no longer wanting the product</li>
+                <li>Issues caused by third-party software, antivirus, or firewall settings</li>
+                <li>Failure to follow installation instructions or product documentation</li>
+                <li>Using the product in violation of our Terms of Service</li>
+                <li>Account suspension or termination due to policy violations</li>
+                <li>Products that have been successfully used or accessed</li>
+                <li>Issues arising from not owning the original game the product is designed for</li>
+            </ul>
+        </div>
+
+        <div class="notice-box">
+            <h3>Important Notice</h3>
+            <p>Due to the digital nature of our products, once a product has been downloaded and accessed, we may not be able to offer a full refund. We encourage you to contact our support team before making a purchase if you have any questions about product compatibility or functionality.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">4</span>Technical Support Before Refund</h2>
+            <p>Before processing a refund request, our support team will attempt to resolve any technical issues you may be experiencing. This may include:</p>
+            <ul>
+                <li>Providing updated installation instructions</li>
+                <li>Troubleshooting compatibility issues</li>
+                <li>Offering alternative solutions or product replacements</li>
+                <li>Providing guidance on system configuration</li>
+            </ul>
+            <p>Many issues can be resolved with proper support, saving you time and ensuring you get the most value from your purchase.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">5</span>Partial Refunds</h2>
+            <p>In some cases, we may offer partial refunds:</p>
+            <ul>
+                <li><strong>Subscription Products:</strong> Prorated refund for unused subscription time</li>
+                <li><strong>Bundle Purchases:</strong> Partial refund if only some products in a bundle are affected</li>
+                <li><strong>Extended Usage:</strong> Reduced refund amount if product was used extensively before the issue was reported</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">6</span>Refund Method</h2>
+            <p>Refunds will be issued to the original payment method used for the purchase:</p>
+            <ul>
+                <li><strong>Credit/Debit Cards:</strong> Refund credited to the card used (5-10 business days)</li>
+                <li><strong>PayPal:</strong> Refund sent to PayPal account (3-5 business days)</li>
+                <li><strong>Other Methods:</strong> Refund issued via original payment provider</li>
+            </ul>
+            <p>Please note that your bank or payment provider may have their own processing times that are beyond our control.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">7</span>Chargebacks</h2>
+            <p>We encourage customers to contact us directly before initiating a chargeback with their bank or credit card company. Chargebacks result in additional fees and may delay the resolution of your issue.</p>
+            <p>If you file a chargeback before contacting us:</p>
+            <ul>
+                <li>Your account may be suspended pending investigation</li>
+                <li>Access to purchased products may be revoked</li>
+                <li>Future purchases may be restricted</li>
+            </ul>
+            <p>We are committed to resolving issues fairly and promptly when contacted directly.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">8</span>Consumer Rights</h2>
+            <p>This refund policy does not affect any statutory rights you may have under applicable consumer protection laws. If you are located in the European Union, you may have additional rights under EU consumer law.</p>
+            <p>For digital content, please note that by completing your purchase and accessing the product, you acknowledge that delivery has begun and you may lose your right of withdrawal under EU regulations.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">9</span>Policy Changes</h2>
+            <p>We reserve the right to modify this refund policy at any time. Changes will be effective immediately upon posting to our website. The refund policy in effect at the time of your purchase will apply to that transaction.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Need a Refund?</h3>
+            <p>Contact our support team and we'll help resolve your issue quickly.</p>
+            <p><a href="mailto:refunds@vanishunleashed.com">refunds@vanishunleashed.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Vanish Unleashed</h4>
+                <p style="color: var(--text-secondary);">Digital software tools and utilities for enhanced gaming experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vanish Unleashed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

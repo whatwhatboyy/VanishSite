@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Vanish Unleashed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --accent: #c084fc;
+            --accent-light: #e879f9;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(139, 92, 246, 0.05);
+            --bg-card-hover: rgba(139, 92, 246, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(139, 92, 246, 0.2);
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
+            --gradient-2: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 100% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 40%),
+                        radial-gradient(ellipse at 0% 100%, rgba(232, 121, 249, 0.1) 0%, transparent 40%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 50%;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-light);
+            bottom: -175px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(0, 100px) scale(1); }
+            75% { transform: translate(-50px, 50px) scale(0.9); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        /* Content Sections */
+        .policy-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul,
+        .policy-section ol {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section strong {
+            color: var(--text-primary);
+        }
+
+        /* Business Info Box */
+        .business-info {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .business-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .business-info p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--gradient-1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem;
+            }
+
+            main {
+                padding: 100px 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Vanish Unleashed</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This policy explains how we collect, use, and protect your information.</p>
+            <span class="effective-date">Effective Date: December 27, 2024</span>
+        </div>
+
+        <div class="business-info">
+            <h3>About Vanish Unleashed</h3>
+            <p>We sell digitally delivered software products and services related to video games. Our offerings include custom-developed software tools, utilities, and configuration files designed to enhance user experience.</p>
+            <p>All products are delivered electronically after purchase. Products are intended for personal entertainment and educational use only.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">1</span>Information We Collect</h2>
+            <p>We collect information you provide directly to us, including:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Email address, username, and password when you create an account</li>
+                <li><strong>Payment Information:</strong> Billing address and payment method details (processed securely through our payment providers)</li>
+                <li><strong>Transaction Data:</strong> Records of products purchased, order history, and delivery information</li>
+                <li><strong>Communication Data:</strong> Information you provide when contacting customer support</li>
+                <li><strong>Technical Data:</strong> IP address, browser type, device information, and operating system</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">2</span>How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Process and fulfill your orders for digital products</li>
+                <li>Provide customer support and respond to inquiries</li>
+                <li>Send order confirmations and product delivery notifications</li>
+                <li>Prevent fraud and unauthorized transactions</li>
+                <li>Improve our products and services</li>
+                <li>Comply with legal obligations</li>
+                <li>Send promotional communications (with your consent)</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">3</span>Legal Basis for Processing (GDPR)</h2>
+            <p>For users in the European Economic Area (EEA), we process your personal data based on the following legal grounds:</p>
+            <ul>
+                <li><strong>Contract Performance:</strong> Processing necessary to fulfill our contract with you (e.g., processing orders)</li>
+                <li><strong>Legitimate Interests:</strong> Processing for our legitimate business interests (e.g., fraud prevention, improving services)</li>
+                <li><strong>Consent:</strong> Processing based on your explicit consent (e.g., marketing communications)</li>
+                <li><strong>Legal Obligation:</strong> Processing required to comply with applicable laws</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">4</span>Information Sharing</h2>
+            <p>We do not sell your personal information. We may share your information with:</p>
+            <ul>
+                <li><strong>Payment Processors:</strong> To process transactions securely (e.g., Stripe, PayPal)</li>
+                <li><strong>Service Providers:</strong> Third parties who assist in operating our business (e.g., email services, hosting)</li>
+                <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
+            </ul>
+            <p>All third-party service providers are contractually obligated to protect your information and use it only for the purposes we specify.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">5</span>Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information, including:</p>
+            <ul>
+                <li>SSL/TLS encryption for data transmission</li>
+                <li>Secure payment processing through PCI-compliant providers</li>
+                <li>Regular security assessments and updates</li>
+                <li>Access controls limiting who can view your data</li>
+                <li>Secure data storage practices</li>
+            </ul>
+            <p>While we strive to protect your information, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">6</span>Data Retention</h2>
+            <p>We retain your personal information for as long as necessary to:</p>
+            <ul>
+                <li>Provide our services and fulfill your orders</li>
+                <li>Comply with legal, accounting, or reporting requirements</li>
+                <li>Resolve disputes and enforce our agreements</li>
+            </ul>
+            <p>Transaction records are typically retained for 7 years to comply with financial regulations. You may request deletion of your account data, subject to our legal retention obligations.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">7</span>Your Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+                <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal exceptions)</li>
+                <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+                <li><strong>Restriction:</strong> Request limitation of how we use your data</li>
+                <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+                <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us using the information provided below.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">8</span>Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Remember your preferences and settings</li>
+                <li>Keep you logged into your account</li>
+                <li>Analyze site traffic and usage patterns</li>
+                <li>Prevent fraudulent activity</li>
+            </ul>
+            <p>You can control cookies through your browser settings. Disabling cookies may affect the functionality of our website.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">9</span>Third-Party Links</h2>
+            <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">10</span>Children's Privacy</h2>
+            <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a child under 18, we will take steps to delete that information.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">11</span>International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers, including standard contractual clauses approved by relevant authorities.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">12</span>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Effective Date" at the top. Your continued use of our services after changes become effective constitutes acceptance of the revised policy.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><span class="section-number">13</span>California Privacy Rights</h2>
+            <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li>Right to know what personal information is collected, used, shared, or sold</li>
+                <li>Right to delete personal information held by businesses</li>
+                <li>Right to opt-out of the sale of personal information</li>
+                <li>Right to non-discrimination for exercising your privacy rights</li>
+            </ul>
+            <p>We do not sell personal information. To exercise your California privacy rights, please contact us.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Questions About Your Privacy?</h3>
+            <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:</p>
+            <p><a href="mailto:privacy@vanishunleashed.com">privacy@vanishunleashed.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Vanish Unleashed</h4>
+                <p style="color: var(--text-secondary);">Digital software tools and utilities for enhanced gaming experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vanish Unleashed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

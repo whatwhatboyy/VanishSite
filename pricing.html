@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Vanish Unleashed | GTA V Visual Mods & Modpacks</title>
+    <meta name="description" content="Premium GTA V visual modification packs, graphic enhancements, and custom player models. Instant digital delivery.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --accent: #c084fc;
+            --accent-light: #e879f9;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(139, 92, 246, 0.05);
+            --bg-card-hover: rgba(139, 92, 246, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(139, 92, 246, 0.2);
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 100% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 40%),
+                        radial-gradient(ellipse at 0% 100%, rgba(232, 121, 249, 0.1) 0%, transparent 40%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -200px;
+            left: -200px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 50%;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-light);
+            bottom: -175px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(0, 100px) scale(1); }
+            75% { transform: translate(-50px, 50px) scale(0.9); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Business Info */
+        .business-info {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .business-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .business-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .business-info ul {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .business-info li {
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(192, 132, 252, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .product-content {
+            padding: 1.75rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-price {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-price span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            -webkit-text-fill-color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Payment Info */
+        .payment-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .payment-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .payment-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-badge {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 100px 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Vanish Unleashed</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Our Products</h1>
+            <p>Premium visual modification packs and custom assets for GTA V. All products are digital downloads delivered instantly after purchase.</p>
+        </div>
+
+        <div class="business-info">
+            <h3>What We Sell</h3>
+            <p>We sell digitally delivered visual modification packs for Grand Theft Auto V (single-player). Our products include:</p>
+            <ul>
+                <li>Graphics enhancement configurations and presets</li>
+                <li>Visual reshade and lighting modifications</li>
+                <li>Custom player model replacements and skins</li>
+                <li>Texture packs and environmental enhancements</li>
+                <li>Vehicle model additions and replacements</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Important:</strong> All products are for single-player use only. Customers must own a legitimate copy of GTA V. We do not sell game copies, accounts, in-game currency, or online services.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#127747;</span>
+                    <span class="product-badge">Best Seller</span>
+                </div>
+                <div class="product-content">
+                    <h3>Ultimate Graphics Pack</h3>
+                    <p>Complete visual overhaul with 4K textures, enhanced lighting, realistic weather effects, and optimized performance settings.</p>
+                    <ul class="product-features">
+                        <li>4K texture replacements</li>
+                        <li>Enhanced lighting & shadows</li>
+                        <li>Realistic weather system</li>
+                        <li>Performance optimization presets</li>
+                        <li>Installation guide included</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$24.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#128100;</span>
+                    <span class="product-badge">Popular</span>
+                </div>
+                <div class="product-content">
+                    <h3>Character Models Collection</h3>
+                    <p>Premium custom player models and character skins with high-quality textures and accurate proportions.</p>
+                    <ul class="product-features">
+                        <li>15+ custom player models</li>
+                        <li>High-resolution textures</li>
+                        <li>Multiple outfit variations</li>
+                        <li>Easy swap configuration</li>
+                        <li>Regular content updates</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$19.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#128663;</span>
+                </div>
+                <div class="product-content">
+                    <h3>Vehicle Models Pack</h3>
+                    <p>High-quality vehicle model replacements featuring real-world inspired designs with detailed interiors.</p>
+                    <ul class="product-features">
+                        <li>25+ vehicle models</li>
+                        <li>Detailed interior designs</li>
+                        <li>Custom handling configurations</li>
+                        <li>Sound replacements included</li>
+                        <li>Compatible with other visual packs</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$29.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#127774;</span>
+                </div>
+                <div class="product-content">
+                    <h3>Reshade Preset Collection</h3>
+                    <p>Professional reshade configurations for cinematic visuals, realistic colors, and enhanced atmosphere.</p>
+                    <ul class="product-features">
+                        <li>10 unique visual presets</li>
+                        <li>Cinematic color grading</li>
+                        <li>Ambient occlusion settings</li>
+                        <li>Depth of field options</li>
+                        <li>Low, medium & high performance versions</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$14.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#127961;</span>
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-content">
+                    <h3>Environment Overhaul</h3>
+                    <p>Complete environmental enhancement with improved vegetation, water effects, and atmospheric details.</p>
+                    <ul class="product-features">
+                        <li>Enhanced vegetation & trees</li>
+                        <li>Realistic water reflections</li>
+                        <li>Improved road textures</li>
+                        <li>Better building details</li>
+                        <li>Night lighting improvements</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$22.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>&#128230;</span>
+                    <span class="product-badge">Bundle</span>
+                </div>
+                <div class="product-content">
+                    <h3>Complete Modpack Bundle</h3>
+                    <p>Everything included: graphics, characters, vehicles, reshade, and environment packs in one complete package.</p>
+                    <ul class="product-features">
+                        <li>All 5 packs included</li>
+                        <li>Pre-configured for compatibility</li>
+                        <li>Step-by-step installation guide</li>
+                        <li>Priority customer support</li>
+                        <li>Future updates included</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">$79.99 <span>USD</span></div>
+                        <a href="contact.html" class="btn">Purchase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-info">
+            <h3>Secure Payment & Instant Delivery</h3>
+            <p>All payments are processed securely. After purchase, you'll receive instant access to download your products.</p>
+            <div class="payment-badges">
+                <span class="payment-badge">Stripe</span>
+                <span class="payment-badge">PayPal</span>
+                <span class="payment-badge">Visa</span>
+                <span class="payment-badge">Mastercard</span>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How do I receive my purchase?</h4>
+                    <p>All products are delivered digitally. You'll receive download links via email immediately after your payment is confirmed.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need to own GTA V?</h4>
+                    <p>Yes, you must own a legitimate copy of Grand Theft Auto V to use our visual modification packs.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are these for single-player only?</h4>
+                    <p>Yes, all our products are designed exclusively for single-player use and should not be used in online modes.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer refunds?</h4>
+                    <p>Yes, we offer refunds within 14 days if the product doesn't work as described. See our refund policy for details.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is installation support included?</h4>
+                    <p>Yes, all products include detailed installation guides. Our support team is also available to help if needed.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will I receive updates?</h4>
+                    <p>Yes, you'll receive free updates for compatibility and improvements. Bundle purchases include lifetime updates.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Vanish Unleashed</h4>
+                <p>Premium visual modification packs for GTA V single-player. Digital delivery only.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vanish Unleashed. All rights reserved. All products are digital downloads. GTA V is a trademark of Rockstar Games. We are not affiliated with Rockstar Games.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
