@@ -122,18 +122,27 @@
             font-size: 0.9rem;
             font-weight: 600;
             border-radius: 8px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .btn-secondary {
@@ -143,7 +152,9 @@
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-muted);
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-2px);
         }
 
         .mobile-menu {
@@ -292,12 +303,35 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 2rem;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #a855f7);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
         }
 
         .service-icon {
@@ -310,6 +344,7 @@
             justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            transition: transform 0.3s ease;
         }
 
         .service-card h3 {
@@ -353,7 +388,7 @@
             width: 48px;
             height: 48px;
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -362,6 +397,14 @@
             font-weight: 700;
             margin: 0 auto 1rem;
             color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: scale(1.1);
         }
 
         .step h3 {
@@ -387,6 +430,13 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            border-color: rgba(251, 191, 36, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
         .testimonial-stars {
@@ -476,11 +526,81 @@
             font-size: 0.9rem;
         }
 
+        /* Stats Section */
+        .stats-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .scroll-top svg {
+            width: 24px;
+            height: 24px;
+            color: white;
         }
 
         .cta-content {
@@ -586,6 +706,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
@@ -615,8 +739,13 @@
 
             .services-grid,
             .testimonials-grid,
-            .steps-grid {
+            .steps-grid,
+            .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
             }
 
             .footer-content {
@@ -739,6 +868,30 @@
                 </div>
                 <div style="text-align: center; margin-top: 2rem;">
                     <a href="services.html" class="btn btn-primary">View All Services & Pricing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Videos Edited</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Avg Response</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -924,6 +1077,13 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
     <script>
         // Mobile menu toggle
         const mobileMenu = document.getElementById('mobileMenu');
@@ -939,6 +1099,20 @@
                 const item = question.parentElement;
                 item.classList.toggle('active');
             });
+        });
+
+        // Scroll to top button
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
