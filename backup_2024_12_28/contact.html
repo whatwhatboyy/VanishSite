@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vanish Unleashed | Support</title>
+    <meta name="description" content="Get in touch with Vanish Unleashed support. Discord and email support available. We're a small team so please allow time for responses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --accent: #c084fc;
+            --accent-light: #e879f9;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(139, 92, 246, 0.05);
+            --bg-card-hover: rgba(139, 92, 246, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(139, 92, 246, 0.2);
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
+            --gradient-2: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 100% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 40%),
+                        radial-gradient(ellipse at 0% 100%, rgba(232, 121, 249, 0.1) 0%, transparent 40%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 50%;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-light);
+            bottom: -175px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(0, 100px) scale(1); }
+            75% { transform: translate(-50px, 50px) scale(0.9); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .info-card a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .info-card a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+
+        .form-group select option {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Methods Section */
+        .contact-methods {
+            margin-bottom: 3rem;
+        }
+
+        .contact-methods h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-methods > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .method-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+        }
+
+        .method-card:hover::before {
+            opacity: 1;
+        }
+
+        .method-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
+        }
+
+        .method-card.featured::before {
+            opacity: 1;
+        }
+
+        .method-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .method-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.25rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .method-icon.discord {
+            background: linear-gradient(135deg, #5865F2 0%, #7289DA 100%);
+        }
+
+        .method-icon.chat {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .method-icon.email {
+            background: var(--gradient-1);
+        }
+
+        .method-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .method-card > p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .response-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 0.4rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .response-time.slow {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .response-time.variable {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--primary-light);
+        }
+
+        /* Small Team Notice Banner */
+        .team-notice {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .team-notice-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .team-notice-content h4 {
+            color: #fbbf24;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .team-notice-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .response-time::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 50%;
+        }
+
+        .method-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .method-btn.discord-btn {
+            background: #5865F2;
+            color: white;
+        }
+
+        .method-btn.discord-btn:hover {
+            background: #4752C4;
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
+        }
+
+        .method-btn.chat-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .method-btn.chat-btn:hover {
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .method-btn.email-btn {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .method-btn.email-btn:hover {
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Email Options */
+        .email-options {
+            margin-top: 3rem;
+        }
+
+        .email-options h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .email-options > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .email-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .email-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .email-card:hover {
+            border-color: var(--primary);
+        }
+
+        .email-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .email-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .email-header h4 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .email-card > p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .email-card a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .email-card a:hover {
+            text-decoration: underline;
+        }
+
+        .email-response {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Business Info */
+        .business-info {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .business-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .business-info p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 100px 1rem 3rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+
+            .methods-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .email-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1000px) and (min-width: 769px) {
+            .methods-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Vanish Unleashed</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Have a question or need help? We're here for you — just keep in mind we're a small team.</p>
+        </div>
+
+        <!-- Small Team Notice -->
+        <div class="team-notice">
+            <div class="team-notice-icon">&#128075;</div>
+            <div class="team-notice-content">
+                <h4>We're a Small Team</h4>
+                <p>Vanish Unleashed is run by a small, passionate team. We're not available 24/7 and may have delayed response times, especially when we're traveling or during busy periods. We appreciate your patience and promise to get back to you as soon as we can!</p>
+            </div>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+            <h2>Choose How to Reach Us</h2>
+            <p>Pick the method that works best for you based on urgency and preference</p>
+            <div class="methods-grid">
+                <!-- Discord -->
+                <div class="method-card featured">
+                    <span class="method-badge">Recommended</span>
+                    <div class="method-icon discord">&#128172;</div>
+                    <h3>Discord Community</h3>
+                    <p>Join our Discord server for help from our team and community members. Best for quick questions and connecting with other users.</p>
+                    <span class="response-time variable">Usually within a few hours</span>
+                    <a href="#" class="method-btn discord-btn">Join Discord Server</a>
+                </div>
+
+                <!-- Live Chat -->
+                <div class="method-card">
+                    <div class="method-icon chat">&#128488;</div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with us when we're online. Availability varies — check Discord for our current status or leave a message.</p>
+                    <span class="response-time slow">When available</span>
+                    <button class="method-btn chat-btn" onclick="openChat()">Start Live Chat</button>
+                </div>
+
+                <!-- Email -->
+                <div class="method-card">
+                    <div class="method-icon email">&#9993;</div>
+                    <h3>Email Support</h3>
+                    <p>Send us a detailed message and we'll get back to you. Best for complex issues that need thorough responses.</p>
+                    <span class="response-time slow">1-3 business days</span>
+                    <a href="#contact-form" class="method-btn email-btn">Send Email</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Options -->
+        <div class="email-options">
+            <h2>Email Addresses by Department</h2>
+            <p>Send directly to the right team for faster resolution</p>
+            <div class="email-grid">
+                <div class="email-card">
+                    <div class="email-header">
+                        <div class="email-icon">&#128188;</div>
+                        <h4>General Inquiries</h4>
+                    </div>
+                    <p>Product questions, partnerships, and general information</p>
+                    <a href="mailto:info@vanishunleashed.com">info@vanishunleashed.com</a>
+                    <span class="email-response">2-5 business days</span>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <div class="email-icon">&#128295;</div>
+                        <h4>Technical Support</h4>
+                    </div>
+                    <p>Installation help, bug reports, and script issues</p>
+                    <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a>
+                    <span class="email-response">1-3 business days</span>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <div class="email-icon">&#128179;</div>
+                        <h4>Billing & Orders</h4>
+                    </div>
+                    <p>Payment issues, refund requests, and order status</p>
+                    <a href="mailto:billing@vanishunleashed.com">billing@vanishunleashed.com</a>
+                    <span class="email-response">1-3 business days</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-grid" id="contact-form">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>&#9889; Priority for Bundle Customers</h3>
+                    <p>Purchased a bundle? Include your order number in your message for faster service when we're available.</p>
+                </div>
+                <div class="info-card">
+                    <h3>&#127760; Response Times May Vary</h3>
+                    <p>We're a small team and sometimes travel. Please allow extra time for responses, especially on weekends and holidays.</p>
+                </div>
+                <div class="info-card">
+                    <h3>&#128218; Self-Help Resources</h3>
+                    <p>While waiting for a reply, check our documentation and guides for instant answers to common questions.</p>
+                    <p style="margin-top: 0.5rem;"><a href="#">View Documentation</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>&#128101; Community Help</h3>
+                    <p>Other users in our Discord can often help with common questions. The community is a great resource!</p>
+                    <p style="margin-top: 0.5rem;"><a href="#">Join Discord</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="refund">Refund Request</option>
+                            <option value="presale">Pre-Sale Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNumber">Order Number (if applicable)</label>
+                        <input type="text" id="orderNumber" name="orderNumber" placeholder="VU-XXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Support FAQ</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What's the fastest way to get help?</h3>
+                    <p>Discord is usually our fastest channel. Community members can often help quickly, and we respond when we're available — usually within a few hours.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why might responses be delayed?</h3>
+                    <p>We're a small team that occasionally travels. We do our best to respond quickly, but please allow 1-3 business days for email and be patient on Discord.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>When is live chat available?</h3>
+                    <p>Live chat availability varies based on our schedule. Check Discord for our current status, or leave a message and we'll get back to you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if my script isn't working?</h3>
+                    <p>Post in Discord with your server framework (ESX/QBCore), error messages, and server.cfg. The community or our team will help when available.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer installation services?</h3>
+                    <p>Yes, we offer paid installation services. Keep in mind scheduling depends on our availability, so please plan ahead if you need this service.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I request custom scripts?</h3>
+                    <p>Yes, we accept custom projects when our schedule allows. Reach out via email or Discord, but please note turnaround times will depend on our workload.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="business-info">
+            <h3>About Our Support</h3>
+            <p>Vanish Unleashed is a small, independent team of passionate FiveM developers. While we can't promise instant responses, we're committed to helping every customer succeed. We appreciate your patience and understanding — quality support is always worth the wait!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Vanish Unleashed</h4>
+                <p style="color: var(--text-secondary);">Premium FiveM scripts, server resources, and digital products. Instant delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms of Service</a>
+                <a href="terms.html">Privacy Policy</a>
+                <a href="terms.html">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vanish Unleashed. All rights reserved. FiveM, GTA V, and other game names are trademarks of their respective owners.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        function openChat() {
+            // Placeholder for live chat integration (Tawk.to, Crisp, Intercom, etc.)
+            alert('Live chat is loading... In production, this would open your chat widget.');
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'re a small team, so please allow 1-3 business days for a response. We appreciate your patience!');
+            this.reset();
+        });
+
+        // Smooth scroll for email button
+        document.querySelector('a[href="#contact-form"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

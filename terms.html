@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms, Privacy & Refunds - Vanish Unleashed</title>
-    <meta name="description" content="Terms of Service, Privacy Policy, and Refund Policy for Vanish Unleashed digital products.">
+    <title>Terms of Service | Vanish Video Editing</title>
+    <meta name="description" content="Terms of Service, Privacy Policy, and Refund Policy for Vanish Video Editing services.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #8b5cf6;
-            --primary-light: #a78bfa;
-            --accent: #c084fc;
-            --bg-dark: #0a0a0f;
-            --bg-card: rgba(139, 92, 246, 0.05);
-            --border: rgba(139, 92, 246, 0.2);
-            --text: #ffffff;
-            --text-muted: #9ca3af;
-            --success: #10b981;
-            --warning: #fbbf24;
-            --danger: #ef4444;
-            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #c084fc 50%, #e879f9 100%);
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text);
-            line-height: 1.6;
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #18181b;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --success: #22c55e;
         }
 
-        .bg-gradient {
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(192, 132, 252, 0.1), transparent);
-            pointer-events: none;
-            z-index: 0;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            scroll-behavior: smooth;
         }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         header {
             position: fixed;
@@ -49,13 +40,13 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(10, 10, 15, 0.9);
+            background: rgba(10, 10, 11, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
@@ -63,15 +54,8 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+        .logo span { color: var(--primary); }
 
         .nav-links {
             display: flex;
@@ -82,13 +66,28 @@
 
         .nav-links a {
             color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
 
         .mobile-menu {
             display: none;
@@ -106,74 +105,66 @@
         }
 
         main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 100px 2rem 60px;
-            position: relative;
-            z-index: 1;
+            padding-top: 80px;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 2rem;
+            padding: 60px 2rem 40px;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent);
         }
 
         .page-header h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 0.75rem;
         }
 
         .page-header p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .last-updated {
             display: inline-block;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--text-muted);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             padding: 0.35rem 0.75rem;
             border-radius: 50px;
-            font-size: 0.75rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
         }
 
         /* Tab Navigation */
         .tab-nav {
             display: flex;
+            justify-content: center;
             gap: 0.5rem;
+            padding: 0 2rem;
             margin-bottom: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            background: transparent;
-            border: none;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: inherit;
+            transition: all 0.2s;
         }
 
         .tab-btn:hover {
-            color: var(--text);
+            border-color: var(--text-muted);
         }
 
         .tab-btn.active {
-            background: var(--gradient-1);
+            background: var(--primary);
+            border-color: var(--primary);
             color: white;
         }
 
@@ -185,20 +176,27 @@
             display: block;
         }
 
-        /* Content Box */
+        section {
+            padding: 0 2rem 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .content-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 2rem;
         }
 
         .content-box h2 {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary-light);
-            margin: 1.5rem 0 0.75rem;
-            padding-top: 1rem;
+            margin: 2rem 0 1rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border);
         }
 
@@ -210,165 +208,88 @@
 
         .content-box p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
-        .content-box ul {
+        .content-box ul, .content-box ol {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-left: 1.25rem;
-            margin-bottom: 0.75rem;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .content-box li {
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.5rem;
         }
 
         .content-box strong {
             color: var(--text);
         }
 
-        .content-box a {
-            color: var(--primary-light);
-            text-decoration: none;
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
         }
 
-        .content-box a:hover {
-            text-decoration: underline;
+        .highlight-box p {
+            margin: 0;
+            color: var(--text);
         }
 
-        /* Warning Box */
         .warning-box {
             background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 1rem 0;
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
         }
 
         .warning-box p {
-            color: #fca5a5;
             margin: 0;
+            color: #fca5a5;
         }
 
-        .warning-box strong {
-            color: #ef4444;
-        }
-
-        /* Info Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .info-card {
-            background: rgba(139, 92, 246, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .info-card.green {
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-
-        .info-card.red {
-            border-color: rgba(239, 68, 68, 0.3);
-        }
-
-        .info-card h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-card.green h4 { color: var(--success); }
-        .info-card.red h4 { color: var(--danger); }
-
-        .info-card ul {
-            margin-left: 1rem;
-            font-size: 0.8rem;
-        }
-
-        /* Contact */
         .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
             text-align: center;
             margin-top: 2rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(192, 132, 252, 0.05) 100%);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
         }
 
         .contact-box h3 {
-            font-size: 1rem;
+            font-size: 1.125rem;
             margin-bottom: 0.5rem;
         }
 
         .contact-box p {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
-            background: rgba(10, 10, 15, 0.95);
+            background: var(--bg-secondary);
             border-top: 1px solid var(--border);
             padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
-        }
-
-        .footer-section h4 {
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            display: block;
-            padding: 0.2rem 0;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover { color: var(--primary-light); }
-
-        .footer-bottom {
-            max-width: 800px;
-            margin: 1.5rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
             text-align: center;
         }
 
-        .footer-bottom p {
+        footer p {
             color: var(--text-muted);
-            font-size: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            color: var(--text);
         }
 
         @media (max-width: 768px) {
@@ -377,10 +298,10 @@
             .nav-links {
                 display: none;
                 position: fixed;
-                top: 60px;
+                top: 65px;
                 left: 0;
                 right: 0;
-                background: rgba(10, 10, 15, 0.98);
+                background: var(--bg);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
@@ -389,32 +310,16 @@
 
             .nav-links.active { display: flex; }
 
-            .tab-nav {
-                flex-direction: column;
-            }
+            .page-header h1 { font-size: 2rem; }
 
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .content-box { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-
     <header>
         <nav>
-            <a href="index.html" class="logo">Vanish Unleashed</a>
+            <a href="index.html" class="logo">Vanish<span>Edits</span></a>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
                 <span></span>
@@ -422,10 +327,11 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="pricing.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="terms.html">Terms</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
             </ul>
         </nav>
     </header>
@@ -434,9 +340,8 @@
         <div class="page-header">
             <h1>Legal & Policies</h1>
             <p>Terms of Service, Privacy Policy, and Refund Policy</p>
+            <span class="last-updated">Last Updated: December 2024</span>
         </div>
-
-        <span class="last-updated">Last Updated: December 2024</span>
 
         <div class="tab-nav">
             <button class="tab-btn active" onclick="showTab('terms')">Terms of Service</button>
@@ -444,327 +349,249 @@
             <button class="tab-btn" onclick="showTab('refund')">Refund Policy</button>
         </div>
 
-        <!-- Terms of Service -->
-        <div id="terms" class="tab-content active">
-            <div class="content-box">
-                <h2>1. Acceptance of Terms</h2>
-                <p>By accessing or using the Vanish Unleashed website ("Site") and purchasing our products, you ("Customer," "you," or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use our services or make any purchases.</p>
-                <p>These Terms constitute a legally binding agreement between you and Vanish Unleashed ("Company," "we," "us," or "our"). By completing a purchase, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+        <section>
+            <div class="container">
+                <!-- Terms of Service -->
+                <div id="terms" class="tab-content active">
+                    <div class="content-box">
+                        <h2>1. About Our Services</h2>
+                        <p><strong>Vanish Video Editing</strong> ("we," "us," "our") provides professional video editing services for content creators, businesses, and individuals. Our services include:</p>
+                        <ul>
+                            <li>YouTube video editing</li>
+                            <li>Social media content creation (TikTok, Reels, Shorts)</li>
+                            <li>Podcast editing (audio and video)</li>
+                            <li>Business and corporate video production</li>
+                            <li>Motion graphics and visual effects</li>
+                        </ul>
+                        <p>We are a legitimate video editing service provider. All work is performed by our professional editing team.</p>
 
-                <h2>2. Business Description</h2>
-                <p><strong>Vanish Unleashed is a digital content provider</strong> that creates and sells original software products for game server modification and visual enhancement. Our business model is:</p>
-                <ul>
-                    <li><strong>Business Type:</strong> Digital goods and software distribution</li>
-                    <li><strong>Delivery Method:</strong> Instant electronic delivery via email</li>
-                    <li><strong>Product Category:</strong> Digital downloads - scripts, code, assets, and configuration files</li>
-                </ul>
+                        <h2>2. How Our Service Works</h2>
+                        <p>Our workflow is designed to ensure you're completely satisfied before payment:</p>
+                        <ol>
+                            <li><strong>Submit Your Project:</strong> Send us your raw footage and project requirements</li>
+                            <li><strong>Get a Quote:</strong> We provide a price estimate based on your project scope</li>
+                            <li><strong>We Edit:</strong> Our team creates your video according to your specifications</li>
+                            <li><strong>Preview with Watermark:</strong> We send you a watermarked preview so you can review the work</li>
+                            <li><strong>Request Revisions:</strong> You can request changes until you're satisfied with the result</li>
+                            <li><strong>Payment:</strong> Once you approve the final version, payment is collected</li>
+                            <li><strong>Final Delivery:</strong> We deliver the final video without watermark in your preferred format</li>
+                        </ol>
 
-                <h2>3. Products & Services</h2>
-                <p>We sell <strong>original digital products</strong> including:</p>
-                <ul>
-                    <li>FiveM/RedM scripts and server resources (ESX, QBCore frameworks)</li>
-                    <li>GMod addons and server content</li>
-                    <li>Graphics packs, reshade presets, and visual enhancements</li>
-                    <li>Custom 3D models, MLO interiors, and asset packs</li>
-                    <li>Configuration files and documentation</li>
-                </ul>
-                <p><strong>All products are 100% original creations</strong> developed by our team or properly licensed from original creators. Products are intended for legitimate use by server owners, developers, and content creators.</p>
-                <p><strong>Product Descriptions:</strong> Each product listing includes detailed descriptions, features, requirements, and compatibility information. You are responsible for reviewing this information before purchase.</p>
+                        <div class="highlight-box">
+                            <p><strong>Payment After Satisfaction:</strong> You only pay after you've reviewed the watermarked preview and are happy with the final result. This ensures you know exactly what you're getting before any payment is made.</p>
+                        </div>
 
-                <h2>4. What We Do NOT Sell</h2>
-                <p>To be absolutely clear about the nature of our business, we do <strong>NOT</strong> sell:</p>
-                <ul>
-                    <li>Game copies, license keys, or activation codes</li>
-                    <li>Game accounts or login credentials</li>
-                    <li>In-game currency, items, or virtual goods for any game</li>
-                    <li>Server hosting or infrastructure services</li>
-                    <li>Leaked, stolen, pirated, or unauthorized content</li>
-                    <li>Malicious software, exploits, cheats, or hacks</li>
-                    <li>Any products that violate third-party intellectual property rights</li>
-                    <li>Subscription services or recurring billing products</li>
-                </ul>
+                        <h2>3. Client Responsibilities</h2>
+                        <p>By using our services, you agree to:</p>
+                        <ul>
+                            <li>Provide all necessary footage and assets in a timely manner</li>
+                            <li>Ensure you have the rights to any content you provide</li>
+                            <li>Provide clear instructions and feedback</li>
+                            <li>Respond to revision requests within a reasonable timeframe</li>
+                            <li>Not use our watermarked previews for any public or commercial purpose</li>
+                            <li>Pay promptly once you approve the final video</li>
+                        </ul>
 
-                <h2>5. Customer Eligibility & Responsibilities</h2>
-                <p>By making a purchase, you represent and warrant that:</p>
-                <ul>
-                    <li>You are at least 18 years of age, or have obtained verifiable parental/guardian consent</li>
-                    <li>You have the legal capacity to enter into a binding agreement</li>
-                    <li>You will provide accurate, current, and complete information during purchase</li>
-                    <li>You are the authorized holder of the payment method used</li>
-                    <li>You will not use our products for any illegal or unauthorized purpose</li>
-                    <li>You will not redistribute, resell, or share products without written authorization</li>
-                    <li>You will not reverse engineer, decompile, or extract source code from our products</li>
-                    <li>You accept full responsibility for how you use our products</li>
-                </ul>
+                        <h2>4. Intellectual Property</h2>
+                        <p><strong>Your Content:</strong> You retain all rights to the raw footage and content you provide to us.</p>
+                        <p><strong>Final Product:</strong> Upon full payment, you own the rights to the edited video we create for you. You may use it for any purpose.</p>
+                        <p><strong>Our Work:</strong> Until payment is received, the edited video remains our property. Watermarked previews may not be used publicly.</p>
+                        <p><strong>Portfolio Rights:</strong> We may use portions of completed projects in our portfolio unless you request otherwise in writing.</p>
 
-                <h2>6. Pricing & Payment</h2>
-                <p><strong>Pricing:</strong></p>
-                <ul>
-                    <li>All prices are displayed in USD (United States Dollars)</li>
-                    <li>Prices include all applicable fees unless otherwise stated</li>
-                    <li>We reserve the right to change prices at any time without notice</li>
-                    <li>Price at time of purchase is the final price</li>
-                </ul>
-                <p><strong>Payment Processing:</strong></p>
-                <ul>
-                    <li>Payments are processed securely by <strong>Stripe</strong>, <strong>PayPal</strong>, <strong>Paddle</strong>, <strong>Square</strong>, and other trusted processors</li>
-                    <li>We accept major credit cards (Visa, Mastercard, American Express), debit cards, and PayPal</li>
-                    <li>Cryptocurrency payments may be accepted for select products</li>
-                    <li>All transactions are encrypted using industry-standard SSL/TLS</li>
-                    <li>We do NOT store your full credit card number on our servers</li>
-                    <li>Payment is collected in full at the time of purchase (one-time payment, no recurring charges)</li>
-                </ul>
-                <p><strong>Cryptocurrency Notice:</strong> If paying with cryptocurrency, please note that crypto transactions are irreversible. Ensure you send the correct amount to the correct address. Crypto payments are subject to the same refund policy as other payment methods, but refunds will be issued in USD equivalent value.</p>
-                <p><strong>Billing Statement:</strong> Charges will appear on your statement as "VANISH UNLEASHED" or similar. If you do not recognize a charge, contact us at <strong>billing@vanishunleashed.com</strong> BEFORE disputing with your bank.</p>
+                        <h2>5. Delivery & Turnaround</h2>
+                        <ul>
+                            <li><strong>Standard Delivery:</strong> 3-5 business days depending on project complexity</li>
+                            <li><strong>Rush Delivery:</strong> 24-48 hours available for an additional fee</li>
+                            <li><strong>File Delivery:</strong> Final files delivered via Google Drive, Dropbox, or WeTransfer</li>
+                            <li><strong>File Formats:</strong> MP4 (H.264) standard; other formats available upon request</li>
+                        </ul>
+                        <p>Turnaround times begin once all footage and requirements are received.</p>
 
-                <h2>7. Order Confirmation & Digital Delivery</h2>
-                <p><strong>Order Process:</strong></p>
-                <ul>
-                    <li>Upon successful payment, you will receive an email confirmation with your order details</li>
-                    <li>Download links are provided immediately via email</li>
-                    <li>Products are delivered electronically - no physical items are shipped</li>
-                    <li>You are responsible for providing a valid, accessible email address</li>
-                </ul>
-                <p><strong>Delivery Acknowledgment:</strong> By completing your purchase, you explicitly acknowledge and agree that:</p>
-                <ul>
-                    <li>You are purchasing a <strong>digital product</strong> delivered instantly</li>
-                    <li>You waive any "cooling off" period that may apply to physical goods</li>
-                    <li>Once download access is provided, delivery is considered complete</li>
-                    <li>Downloading or accessing the product constitutes receipt and use</li>
-                </ul>
-                <p><strong>Proof of Delivery:</strong> We maintain comprehensive delivery records including email confirmations with timestamps, download access logs (IP address, date, time), order details, and customer information. These records serve as proof of delivery.</p>
+                        <h2>6. Revisions</h2>
+                        <ul>
+                            <li>All projects include revision rounds as specified in your package</li>
+                            <li>Revisions must be requested within 7 days of receiving the preview</li>
+                            <li>Major scope changes may require additional fees</li>
+                            <li>We work with you until you're satisfied before requesting payment</li>
+                        </ul>
 
-                <h2>8. Refund Policy Summary</h2>
-                <p>We offer a <strong>14-day money-back guarantee</strong> on all products. If you are not satisfied with your purchase for any reason, you can request a full refund within 14 days of your purchase date.</p>
-                <p><strong>Key Points:</strong></p>
-                <ul>
-                    <li>Full refund available within 14 days of purchase - no questions asked</li>
-                    <li>Contact <strong>billing@vanishunleashed.com</strong> with your order number</li>
-                    <li>Refunds processed within 3-5 business days</li>
-                    <li>See the full Refund Policy tab for complete details</li>
-                </ul>
+                        <h2>7. Payment Terms</h2>
+                        <ul>
+                            <li>Payment is due after you approve the final watermarked preview</li>
+                            <li>We accept credit cards, debit cards, and PayPal</li>
+                            <li>All payments are processed securely through Stripe or PayPal</li>
+                            <li>Prices are in USD unless otherwise specified</li>
+                            <li>For monthly packages, payment is due at the beginning of each billing period</li>
+                        </ul>
 
-                <h2>9. Dispute Resolution & Chargebacks</h2>
-                <p><strong>Contact Us First:</strong> If you have ANY issue with your purchase, you MUST contact us at <strong>billing@vanishunleashed.com</strong> before filing any dispute, chargeback, or complaint with your payment provider. We are committed to resolving all legitimate issues promptly and fairly.</p>
-                <p><strong>Response Commitment:</strong> We will respond to all billing inquiries within 1-3 business days. We're a small team, but we prioritize customer satisfaction.</p>
-                <p><strong>Fraudulent Chargebacks:</strong> Filing a chargeback for a product you received and used, without first contacting us, constitutes fraud. We will:</p>
-                <ul>
-                    <li>Dispute all chargebacks with comprehensive evidence including proof of delivery, download logs, IP records, and terms acceptance</li>
-                    <li>Immediately revoke all product licenses associated with the account</li>
-                    <li>Permanently ban the customer from future purchases</li>
-                    <li>Report fraudulent activity to fraud prevention databases</li>
-                    <li>Reserve the right to pursue legal action for damages</li>
-                </ul>
+                        <h2>8. Cancellation</h2>
+                        <p>You may cancel your project at any time before approving the final preview at no charge. Once payment is made and final files are delivered, the project is considered complete.</p>
 
-                <h2>10. Intellectual Property & License</h2>
-                <p><strong>Ownership:</strong> All products, content, code, and materials remain the intellectual property of Vanish Unleashed or our licensors.</p>
-                <p><strong>License Grant:</strong> Your purchase grants you a limited, non-exclusive, non-transferable, revocable license to:</p>
-                <ul>
-                    <li>Use the product for personal or private server use</li>
-                    <li>Modify the product for your own use (where technically possible)</li>
-                    <li>Use the product on multiple servers you personally own/operate</li>
-                </ul>
-                <p><strong>Restrictions:</strong> You may NOT:</p>
-                <ul>
-                    <li>Redistribute, resell, sublicense, or share products</li>
-                    <li>Claim ownership or authorship of our products</li>
-                    <li>Use products in a way that competes with our business</li>
-                    <li>Remove or alter any proprietary notices or attribution</li>
-                </ul>
+                        <h2>9. Limitation of Liability</h2>
+                        <p>Our total liability is limited to the amount you paid for the specific service. We are not liable for indirect, consequential, or special damages arising from the use of our services.</p>
 
-                <h2>11. Third-Party Platform Legitimacy</h2>
-                <p><strong>About FiveM & Modding Platforms:</strong> Our products are designed for use with legitimate third-party modding platforms:</p>
-                <ul>
-                    <li><strong>FiveM/RedM:</strong> Officially sanctioned multiplayer modification frameworks developed by Cfx.re. These platforms operate under Rockstar Games' modding policy which permits single-player modifications and dedicated multiplayer servers</li>
-                    <li><strong>Garry's Mod:</strong> A legitimate sandbox game by Facepunch Studios that officially supports community addons</li>
-                    <li>Our scripts and resources are designed for private roleplay servers, not for exploiting or cheating in official game modes</li>
-                </ul>
-                <p><strong>Disclaimer:</strong> We are <strong>NOT affiliated with, endorsed by, or sponsored by</strong> Rockstar Games, Take-Two Interactive, Cfx.re, Facepunch Studios, Valve Corporation, or any of their subsidiaries. FiveM, GTA V, Red Dead Redemption, GMod, and other names are trademarks of their respective owners.</p>
-                <p>We make no guarantees regarding continued compatibility with game or framework updates. Platform policy changes are outside our control.</p>
+                        <h2>10. Contact</h2>
+                        <p>For questions about these terms, contact us at <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a></p>
+                    </div>
+                </div>
 
-                <h2>12. Disclaimer of Warranties</h2>
-                <p>Products are provided <strong>"AS-IS"</strong> and <strong>"AS AVAILABLE"</strong> without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, non-infringement, or that products will be error-free or uninterrupted.</p>
+                <!-- Privacy Policy -->
+                <div id="privacy" class="tab-content">
+                    <div class="content-box">
+                        <h2>1. Information We Collect</h2>
+                        <p><strong>Information You Provide:</strong></p>
+                        <ul>
+                            <li>Name and email address</li>
+                            <li>Payment information (processed securely by Stripe/PayPal)</li>
+                            <li>Project files and footage you upload</li>
+                            <li>Communication history</li>
+                        </ul>
+                        <p><strong>Automatically Collected:</strong></p>
+                        <ul>
+                            <li>IP address</li>
+                            <li>Browser type and device information</li>
+                            <li>Pages visited on our website</li>
+                        </ul>
 
-                <h2>13. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law:</p>
-                <ul>
-                    <li>Our total liability shall not exceed the amount you paid for the specific product</li>
-                    <li>We are not liable for indirect, incidental, special, consequential, or punitive damages</li>
-                    <li>We are not liable for damages from third-party actions, software updates, or service changes</li>
-                    <li>We are not liable for any loss of profits, data, or business opportunities</li>
-                </ul>
+                        <h2>2. How We Use Your Information</h2>
+                        <ul>
+                            <li>To provide and deliver our video editing services</li>
+                            <li>To process payments</li>
+                            <li>To communicate about your project</li>
+                            <li>To improve our services</li>
+                            <li>To send updates about your order</li>
+                        </ul>
 
-                <h2>14. Indemnification</h2>
-                <p>You agree to indemnify, defend, and hold harmless Vanish Unleashed and its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of our products, violation of these Terms, or infringement of any third-party rights.</p>
+                        <h2>3. Your Files & Footage</h2>
+                        <p>We take the security of your content seriously:</p>
+                        <ul>
+                            <li>Your files are stored securely during the editing process</li>
+                            <li>We do not share your footage with third parties</li>
+                            <li>Files are deleted within 30 days after project completion unless you request otherwise</li>
+                            <li>We use encrypted file transfer services</li>
+                        </ul>
 
-                <h2>15. Termination</h2>
-                <p>We reserve the right to terminate or suspend your access to our products and services immediately, without notice, for conduct that we believe violates these Terms, is harmful to other users or third parties, or is fraudulent or illegal.</p>
+                        <h2>4. Payment Processing</h2>
+                        <p>All payments are processed by <strong>Stripe</strong> and <strong>PayPal</strong>, which are PCI-DSS compliant. We do not store your full credit card information on our servers.</p>
 
-                <h2>16. Governing Law</h2>
-                <p>These Terms shall be governed by and construed in accordance with applicable laws. Any disputes shall be resolved through appropriate legal channels in the jurisdiction where our business is registered.</p>
+                        <h2>5. Data Sharing</h2>
+                        <p><strong>We do not sell your personal information.</strong> We only share data with:</p>
+                        <ul>
+                            <li>Payment processors (Stripe, PayPal) to complete transactions</li>
+                            <li>Cloud storage services for file transfer</li>
+                            <li>Legal authorities if required by law</li>
+                        </ul>
 
-                <h2>17. Severability</h2>
-                <p>If any provision of these Terms is found unenforceable, that provision shall be limited to the minimum extent necessary, and all other provisions shall remain in full force and effect.</p>
+                        <h2>6. Your Rights</h2>
+                        <p>You have the right to:</p>
+                        <ul>
+                            <li>Access your personal data</li>
+                            <li>Request deletion of your data</li>
+                            <li>Request deletion of your project files</li>
+                            <li>Opt out of marketing communications</li>
+                        </ul>
+                        <p>Contact <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a> to exercise these rights.</p>
 
-                <h2>18. Entire Agreement</h2>
-                <p>These Terms, together with our Privacy Policy and Refund Policy, constitute the entire agreement between you and Vanish Unleashed regarding the use of our services and supersede all prior agreements.</p>
+                        <h2>7. Data Security</h2>
+                        <p>We use industry-standard security measures including SSL/TLS encryption, secure file storage, and access controls to protect your information.</p>
 
-                <h2>19. Changes to Terms</h2>
-                <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of our services after changes constitutes acceptance of the modified terms.</p>
+                        <h2>8. Contact</h2>
+                        <p>For privacy questions, contact: <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a></p>
+                    </div>
+                </div>
 
-                <h2>20. Contact Information</h2>
-                <p>For questions about these Terms:</p>
-                <ul>
-                    <li><strong>General:</strong> support@vanishunleashed.com</li>
-                    <li><strong>Billing:</strong> billing@vanishunleashed.com</li>
-                    <li><strong>Legal:</strong> legal@vanishunleashed.com</li>
-                </ul>
+                <!-- Refund Policy -->
+                <div id="refund" class="tab-content">
+                    <div class="content-box">
+                        <h2>1. Our Satisfaction Guarantee</h2>
+                        <p>We want you to be completely happy with our work. That's why our process is designed to ensure satisfaction:</p>
+
+                        <div class="highlight-box">
+                            <p><strong>Preview Before Payment:</strong> You receive a watermarked preview of your completed video before any payment is required. You can request revisions until you're satisfied, then pay once you approve the final result.</p>
+                        </div>
+
+                        <h2>2. When Refunds Apply</h2>
+                        <p>Because you approve the final product before payment, refund situations are rare. However, refunds may be issued in these cases:</p>
+                        <ul>
+                            <li><strong>Non-delivery:</strong> If we fail to deliver your project within the agreed timeframe</li>
+                            <li><strong>Technical issues:</strong> If there's a problem with the final delivered file that we cannot resolve</li>
+                            <li><strong>Duplicate payment:</strong> If you accidentally pay twice</li>
+                        </ul>
+
+                        <h2>3. When Refunds Do Not Apply</h2>
+                        <ul>
+                            <li>After you've approved the final preview and received the unwatermarked files</li>
+                            <li>For change of mind after payment</li>
+                            <li>If you fail to provide required footage or feedback</li>
+                            <li>For monthly subscriptions after the billing period has started (you may cancel future renewals)</li>
+                        </ul>
+
+                        <h2>4. Cancellation Policy</h2>
+                        <p><strong>Before Approval:</strong> You may cancel your project at any time before approving the final preview at no charge.</p>
+                        <p><strong>Monthly Packages:</strong> You may cancel your subscription at any time. Cancellation takes effect at the end of the current billing period. No refunds for partial months.</p>
+
+                        <h2>5. How to Request a Refund</h2>
+                        <p>If you believe you're eligible for a refund:</p>
+                        <ol>
+                            <li>Email <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a></li>
+                            <li>Include your order details and reason for the refund request</li>
+                            <li>We'll review and respond within 2-3 business days</li>
+                        </ol>
+
+                        <h2>6. Refund Processing</h2>
+                        <p>Approved refunds are processed within 5-10 business days to your original payment method.</p>
+
+                        <h2>7. Disputes</h2>
+                        <p><strong>Contact us first:</strong> If you have any issue with your order, please contact us before filing a dispute with your payment provider. We're committed to resolving issues fairly and promptly.</p>
+
+                        <div class="warning-box">
+                            <p><strong>Note:</strong> Filing a chargeback or payment dispute for a completed project that was approved and delivered constitutes a breach of these terms and may result in legal action to recover costs.</p>
+                        </div>
+
+                        <h2>8. Contact</h2>
+                        <p>For refund requests or questions: <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Questions About Our Policies?</h3>
+                    <p>Contact us at <a href="mailto:hello@vanishedits.com">hello@vanishedits.com</a> and we'll be happy to help.</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Privacy Policy -->
-        <div id="privacy" class="tab-content">
-            <div class="content-box">
-                <h2>1. Information We Collect</h2>
-                <p><strong>Information You Provide:</strong></p>
-                <ul>
-                    <li>Name and email when making a purchase</li>
-                    <li>Billing information (processed by Stripe/PayPal)</li>
-                    <li>Discord username (if you join our server)</li>
-                    <li>Support communications</li>
-                </ul>
-                <p><strong>Automatically Collected:</strong></p>
-                <ul>
-                    <li>IP address, browser type, device info</li>
-                    <li>Pages visited and time on site</li>
-                </ul>
-
-                <h2>2. How We Use Your Information</h2>
-                <ul>
-                    <li>Process purchases and deliver products</li>
-                    <li>Provide customer support</li>
-                    <li>Send order confirmations</li>
-                    <li>Improve our services</li>
-                    <li>Prevent fraud</li>
-                </ul>
-
-                <h2>3. Payment Processing</h2>
-                <p>All payments are handled by <strong>Stripe</strong> and <strong>PayPal</strong> (PCI-DSS compliant). We do not store your full credit card information.</p>
-
-                <h2>4. Data Sharing</h2>
-                <p><strong>We do not sell your data.</strong> We only share with:</p>
-                <ul>
-                    <li>Payment processors (Stripe, PayPal)</li>
-                    <li>Email services for order confirmations</li>
-                    <li>Legal authorities if required by law</li>
-                </ul>
-
-                <h2>5. Your Rights</h2>
-                <p>You may request to access, correct, or delete your personal data by contacting <strong>privacy@vanishunleashed.com</strong>.</p>
-
-                <h2>6. Data Security</h2>
-                <p>We use SSL/TLS encryption and secure payment processing. While we protect your data, no internet transmission is 100% secure.</p>
-
-                <h2>7. Data Retention</h2>
-                <p>Order records are retained for 7 years for tax/legal compliance. You can request deletion of marketing data anytime.</p>
-
-                <h2>8. Contact</h2>
-                <p>Email: <strong>privacy@vanishunleashed.com</strong></p>
-            </div>
-        </div>
-
-        <!-- Refund Policy -->
-        <div id="refund" class="tab-content">
-            <div class="content-box">
-                <h2>1. 14-Day Money-Back Guarantee</h2>
-                <p>We offer a <strong>full 14-day money-back guarantee</strong> on all products. If you are not satisfied with your purchase for any reason, you can request a full refund within 14 days of your purchase date. No questions asked.</p>
-
-                <h2>2. How to Request a Refund</h2>
-                <p>To request a refund, simply email <strong>billing@vanishunleashed.com</strong> with:</p>
-                <ul>
-                    <li>Your order number</li>
-                    <li>The email address used for purchase</li>
-                </ul>
-                <p>Refunds are typically processed within 3-5 business days and will be credited to your original payment method.</p>
-
-                <h2>3. Refund Window</h2>
-                <p><strong>All products</strong> are eligible for a full refund within <strong>14 days</strong> of purchase. This applies to:</p>
-                <ul>
-                    <li>FiveM/RedM scripts and resources</li>
-                    <li>Graphics packs and visual mods</li>
-                    <li>GMod addons</li>
-                    <li>Product bundles</li>
-                    <li>All other digital products</li>
-                </ul>
-
-                <h2>4. Product Type Clarification</h2>
-                <p><strong>All products sold by Vanish Unleashed are digital goods only.</strong> We do not offer any human-driven services, consulting, custom development work, or installation services. All purchases are for downloadable digital files that are delivered automatically and instantly upon payment.</p>
-
-                <h2>5. Contact</h2>
-                <p>Email: <strong>billing@vanishunleashed.com</strong><br>Response time: 1-3 business days</p>
-            </div>
-        </div>
-
-        <div class="contact-box">
-            <h3>Questions?</h3>
-            <p>Contact us at <a href="mailto:support@vanishunleashed.com">support@vanishunleashed.com</a></p>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">Vanish Unleashed</a>
-                <p>Premium digital products for server owners.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Products</h4>
-                <ul class="footer-links">
-                    <li><a href="pricing.html">All Products</a></li>
-                    <li><a href="pricing.html">FiveM Scripts</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul class="footer-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="terms.html">Terms</a></li>
-                    <li><a href="terms.html">Privacy</a></li>
-                    <li><a href="terms.html">Refunds</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Vanish Unleashed. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 Vanish Video Editing. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="terms.html">Terms</a> |
+            <a href="terms.html#privacy">Privacy</a> |
+            <a href="terms.html#refund">Refund Policy</a> |
+            <a href="contact.html">Contact</a>
+        </p>
     </footer>
 
     <script>
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.getElementById('navLinks');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
 
         function showTab(tabId) {
             // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
             // Show selected tab
             document.getElementById(tabId).classList.add('active');
             event.target.classList.add('active');
+        }
+
+        // Handle URL hash for direct linking to sections
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            if (['terms', 'privacy', 'refund'].includes(hash)) {
+                showTab(hash);
+            }
         }
     </script>
 </body>
