@@ -390,6 +390,141 @@
         .info-list.positive li::before { background: var(--success); }
         .info-list.negative li::before { background: #ef4444; }
 
+        /* Vanish Network Servers */
+        .servers-box {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .server-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .server-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .server-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .server-info {
+            flex: 1;
+        }
+
+        .server-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .server-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .server-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--success);
+        }
+
+        .server-status .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .server-status.coming-soon {
+            color: var(--text-muted);
+        }
+
+        .server-status.coming-soon .status-dot {
+            background: var(--text-muted);
+            animation: none;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .btn-server {
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary-light);
+            padding: 0.6rem 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .btn-server:hover {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .btn-server.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
         /* Footer */
         footer {
             background: rgba(10, 10, 15, 0.95);
@@ -505,6 +640,24 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .server-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .server-info {
+                text-align: center;
+            }
+
+            .server-status {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
@@ -520,6 +673,11 @@
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 280px;
             }
         }
     </style>
@@ -538,6 +696,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pricing.html">Products</a></li>
+                <li><a href="#servers">Servers</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="terms.html">Terms</a></li>
@@ -596,6 +755,52 @@
             </div>
         </section>
 
+        <!-- Vanish Network Game Servers -->
+        <section id="servers">
+            <div class="section-header">
+                <h2>Vanish Network</h2>
+                <p>Check out our official game servers</p>
+            </div>
+            <div class="servers-box">
+                <div class="server-card">
+                    <div class="server-icon">&#127918;</div>
+                    <div class="server-info">
+                        <h3>FiveM Roleplay</h3>
+                        <p>Premium roleplay experience with custom scripts</p>
+                        <div class="server-status">
+                            <span class="status-dot"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-server">Connect</a>
+                </div>
+                <div class="server-card">
+                    <div class="server-icon">&#129312;</div>
+                    <div class="server-info">
+                        <h3>RedM Western RP</h3>
+                        <p>Immersive wild west roleplay server</p>
+                        <div class="server-status">
+                            <span class="status-dot"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-server">Connect</a>
+                </div>
+                <div class="server-card">
+                    <div class="server-icon">&#128736;</div>
+                    <div class="server-info">
+                        <h3>GMod Sandbox</h3>
+                        <p>Creative sandbox with custom addons</p>
+                        <div class="server-status coming-soon">
+                            <span class="status-dot"></span>
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-server disabled">Coming Soon</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Community -->
         <section id="community">
             <div class="community-box">
@@ -615,6 +820,36 @@
                         <h3>5+</h3>
                         <p>Years Experience</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section>
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>What makes Vanish Unleashed different</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>Instant Delivery</h3>
+                    <p>Download your products immediately after purchase - no waiting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128274;</div>
+                    <h3>Secure Payments</h3>
+                    <p>SSL encrypted transactions via Stripe, PayPal & Paddle</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128260;</div>
+                    <h3>14-Day Guarantee</h3>
+                    <p>Full money-back guarantee on all products, no questions asked</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128640;</div>
+                    <h3>Lifetime Updates</h3>
+                    <p>All purchases include free updates for the lifetime of the product</p>
                 </div>
             </div>
         </section>
@@ -702,6 +937,10 @@
                 <!-- Square -->
                 <span class="payment-icon" title="Square">
                     <svg viewBox="0 0 24 24" fill="#3e4348"><path d="M4.01 0A4 4 0 0 0 0 4.01v15.98A4 4 0 0 0 4.01 24h15.98A4 4 0 0 0 24 19.99V4.01A4 4 0 0 0 19.99 0H4.01zm2.18 5.36h11.62c.74 0 1.36.62 1.36 1.36v10.56c0 .74-.62 1.36-1.36 1.36H6.19a1.37 1.37 0 0 1-1.36-1.36V6.72c0-.74.62-1.36 1.36-1.36zm2.59 3.02v7.24h6.44V8.38H8.78z"/></svg>
+                </span>
+                <!-- Paddle -->
+                <span class="payment-icon" title="Paddle">
+                    <svg viewBox="0 0 24 24" fill="#4a90a4"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 14.954c-.683 1.628-2.058 2.82-3.798 3.313-.464.132-.95.2-1.44.2-1.628 0-3.14-.72-4.18-1.98-.26-.316-.48-.66-.66-1.02l2.52-1.08c.12.24.28.46.46.66.62.72 1.52 1.14 2.48 1.14.28 0 .56-.04.84-.12 1.04-.28 1.86-1.02 2.26-2.04.4-1 .3-2.12-.28-3.04-.58-.92-1.52-1.52-2.56-1.66-.28-.04-.56-.04-.84 0l-1.2.2-2.52 1.08-.84.36-2.52 1.08c-.48-1.12-.56-2.4-.2-3.6.4-1.32 1.28-2.44 2.44-3.12 1.16-.68 2.52-.88 3.84-.56 1.32.32 2.44 1.12 3.2 2.24.76 1.12 1.04 2.48.76 3.8-.08.4-.2.78-.36 1.14z"/></svg>
                 </span>
             </div>
         </div>
