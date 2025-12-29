@@ -37,6 +37,10 @@
             color: var(--text);
             line-height: 1.6;
             scroll-behavior: smooth;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -1436,7 +1440,7 @@
                 features: ['25+ Video transitions', '15 Thumbnail templates (PSD)', '10 Lower thirds', 'Sound effects pack', 'Color presets (LUTs)', 'Lifetime updates'],
                 price: '£15',
                 priceLabel: 'one-time',
-                buyUrl: 'https://vanishunleashed.sell.app/'
+                buyUrl: ''
             },
             nenyooo: {
                 name: 'NENYOOO',
@@ -1450,7 +1454,7 @@
                         features: ['75+ Video transitions', '40 Thumbnail templates (PSD)', '30 Animated overlays', '20 Intro/outro templates', 'Full sound library', 'Exclusive MVP effects', 'Priority support', 'Lifetime updates'],
                         price: '£20',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     legacy: {
                         title: 'Nenyooo VIP Legacy',
@@ -1458,7 +1462,7 @@
                         features: ['35+ Video transitions', '20 Thumbnail templates (PSD)', '15 Animated overlays', '10 Intro/outro templates', 'Premium sound FX', 'Lifetime updates'],
                         price: '£10',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     enhanced: {
                         title: 'Nenyooo VIP Enhanced',
@@ -1466,12 +1470,12 @@
                         features: ['50+ Video transitions', '30 Thumbnail templates (PSD)', '20 Animated overlays', '15 Intro/outro templates', 'Premium sound FX', 'Lifetime updates'],
                         price: '£13.50',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     }
                 },
                 price: '£13.50',
                 priceLabel: 'one-time',
-                buyUrl: 'https://vanishunleashed.sell.app/'
+                buyUrl: ''
             },
             riptide: {
                 name: 'RIPTIDE',
@@ -1480,7 +1484,7 @@
                 features: ['100+ Video transitions', '50 Thumbnail templates (PSD)', '40 Motion graphics', '25 Intro/outro templates', 'Full sound library', 'Priority support'],
                 price: '£25',
                 priceLabel: 'one-time',
-                buyUrl: 'https://vanishunleashed.sell.app/'
+                buyUrl: ''
             },
             infamous: {
                 name: 'INFAMOUS',
@@ -1494,7 +1498,7 @@
                         features: ['All packs included (200+ assets)', 'Exclusive master templates', 'Custom animation presets', '1-on-1 setup support', 'Commercial license', 'Lifetime updates + new releases'],
                         price: '£125',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     enhanced: {
                         title: 'Infamous Enhanced Full Plus',
@@ -1502,7 +1506,7 @@
                         features: ['120+ Video transitions', '60 Thumbnail templates (PSD)', '50 Motion graphics', '30 Intro/outro templates', 'Full sound library', 'Lifetime updates'],
                         price: '£40',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     legacy: {
                         title: 'Infamous Legacy Full Plus',
@@ -1510,7 +1514,7 @@
                         features: ['80+ Video transitions', '40 Thumbnail templates (PSD)', '30 Motion graphics', '20 Intro/outro templates', 'Sound effects pack', 'Lifetime updates'],
                         price: '£30',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     sp: {
                         title: 'Infamous SP',
@@ -1518,7 +1522,7 @@
                         features: ['40+ Video transitions', '20 Thumbnail templates (PSD)', '15 Motion graphics', '10 Intro/outro templates', 'Curated sound FX', 'Lifetime updates'],
                         price: '£20',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     },
                     rdr: {
                         title: 'Infamous RDR',
@@ -1526,12 +1530,12 @@
                         features: ['40+ Video transitions', '20 Thumbnail templates (PSD)', '15 Motion graphics', '10 Intro/outro templates', 'Gaming sound FX', 'Lifetime updates'],
                         price: '£20',
                         priceLabel: 'one-time',
-                        buyUrl: 'https://vanishunleashed.sell.app/'
+                        buyUrl: ''
                     }
                 },
                 price: '£125',
                 priceLabel: 'one-time',
-                buyUrl: 'https://vanishunleashed.sell.app/'
+                buyUrl: ''
             },
             free: {
                 name: 'STARTER',
@@ -1724,6 +1728,22 @@
                 alert(`Invalid key for ${packNames[pack]}.\n\nYour key should start with: ${expectedPrefix}XXXX-XXXX\n\nPlease check your key or select the correct pack.`);
             }
         }
+
+        // Anti-copy protection
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A')) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j'))) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
