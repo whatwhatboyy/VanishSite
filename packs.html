@@ -881,14 +881,27 @@
         }
 
         .tier-btn:hover {
-            border-color: var(--nenyooo);
             color: var(--text);
         }
 
-        .tier-btn.active {
+        .nenyooo-tiers .tier-btn.active {
             border-color: var(--nenyooo);
             background: rgba(236, 72, 153, 0.1);
             color: var(--nenyooo);
+        }
+
+        .nenyooo-tiers .tier-btn:hover {
+            border-color: var(--nenyooo);
+        }
+
+        .infamous-tiers .tier-btn.active {
+            border-color: var(--infamous);
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--infamous);
+        }
+
+        .infamous-tiers .tier-btn:hover {
+            border-color: var(--infamous);
         }
 
         .tier-btn .tier-name {
@@ -1093,23 +1106,23 @@
                     <!-- Infamous Pack -->
                     <div class="pack-card infamous">
                         <div class="pack-banner">
-                            <span class="pack-badge">Master</span>
+                            <span class="pack-badge">5 Tiers</span>
                             <div class="pack-logo">INFAMOUS</div>
                         </div>
                         <div class="pack-content">
-                            <h3>Infamous Master Package</h3>
-                            <p class="description">The complete professional suite. Everything in all packs plus exclusive master content.</p>
+                            <h3>Infamous Pack</h3>
+                            <p class="description">Choose from Master, Enhanced, Legacy, SP, or RDR tiers for pro-level content.</p>
                             <ul class="pack-features">
-                                <li>All packs included (200+ assets)</li>
-                                <li>Exclusive master templates</li>
-                                <li>Custom animation presets</li>
-                                <li>1-on-1 setup support</li>
-                                <li>Commercial license</li>
-                                <li>Lifetime updates + new releases</li>
+                                <li>Master - Complete 200+ assets suite</li>
+                                <li>Enhanced Full Plus - Premium collection</li>
+                                <li>Legacy Full Plus - Classic essentials</li>
+                                <li>SP & RDR - Specialized packs</li>
+                                <li>Commercial license (Master)</li>
+                                <li>Lifetime updates</li>
                             </ul>
                             <div class="pack-footer">
-                                <div class="pack-price">£125 <span>one-time</span></div>
-                                <button class="pack-btn" onclick="openPackModal('infamous')">Get Pack</button>
+                                <div class="pack-price">From £20 <span>one-time</span></div>
+                                <button class="pack-btn" onclick="openPackModal('infamous')">Choose Tier</button>
                             </div>
                         </div>
                     </div>
@@ -1220,9 +1233,9 @@
                             <tr>
                                 <td><strong>Price</strong></td>
                                 <td><strong style="color: var(--scooby);">£15</strong></td>
-                                <td><strong style="color: var(--nenyooo);">£13.50</strong></td>
+                                <td><strong style="color: var(--nenyooo);">From £10</strong></td>
                                 <td><strong style="color: var(--riptide);">£25</strong></td>
-                                <td><strong style="color: var(--infamous);">£125</strong></td>
+                                <td><strong style="color: var(--infamous);">From £20</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1352,10 +1365,11 @@
                 <h3 id="modalTitle"></h3>
                 <p class="modal-description" id="modalDescription"></p>
                 <!-- Tier Selector (only for Nenyooo) -->
-                <div class="tier-selector" id="tierSelector" style="display: none;">
+                <!-- Nenyooo Tier Selector -->
+                <div class="tier-selector nenyooo-tiers" id="tierSelector" style="display: none;">
                     <button class="tier-btn active" onclick="selectTier('mvp')">
                         <span class="tier-name">MVP</span>
-                        <span class="tier-price">£8</span>
+                        <span class="tier-price">£20</span>
                     </button>
                     <button class="tier-btn" onclick="selectTier('legacy')">
                         <span class="tier-name">VIP Legacy</span>
@@ -1364,6 +1378,29 @@
                     <button class="tier-btn" onclick="selectTier('enhanced')">
                         <span class="tier-name">VIP Enhanced</span>
                         <span class="tier-price">£13.50</span>
+                    </button>
+                </div>
+                <!-- Infamous Tier Selector -->
+                <div class="tier-selector infamous-tiers" id="infamousTierSelector" style="display: none;">
+                    <button class="tier-btn active" onclick="selectInfamousTier('master')">
+                        <span class="tier-name">Master</span>
+                        <span class="tier-price">£125</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectInfamousTier('enhanced')">
+                        <span class="tier-name">Enhanced</span>
+                        <span class="tier-price">£40</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectInfamousTier('legacy')">
+                        <span class="tier-name">Legacy</span>
+                        <span class="tier-price">£30</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectInfamousTier('sp')">
+                        <span class="tier-name">SP</span>
+                        <span class="tier-price">£20</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectInfamousTier('rdr')">
+                        <span class="tier-name">RDR</span>
+                        <span class="tier-price">£20</span>
                     </button>
                 </div>
                 <ul class="modal-features" id="modalFeatures"></ul>
@@ -1409,9 +1446,9 @@
                 tiers: {
                     mvp: {
                         title: 'Nenyooo MVP',
-                        description: 'Essential Nenyooo effects for creators starting out. Great value starter pack with core transitions and templates.',
-                        features: ['20+ Video transitions', '10 Thumbnail templates (PSD)', '8 Animated overlays', 'Basic sound FX', 'Lifetime updates'],
-                        price: '£8',
+                        description: 'The ultimate Nenyooo experience. Full premium suite with all assets, exclusive MVP content, and priority support.',
+                        features: ['75+ Video transitions', '40 Thumbnail templates (PSD)', '30 Animated overlays', '20 Intro/outro templates', 'Full sound library', 'Exclusive MVP effects', 'Priority support', 'Lifetime updates'],
+                        price: '£20',
                         priceLabel: 'one-time',
                         buyUrl: 'https://vanishunleashed.sell.app/'
                     },
@@ -1425,8 +1462,8 @@
                     },
                     enhanced: {
                         title: 'Nenyooo VIP Enhanced',
-                        description: 'The ultimate Nenyooo experience with all assets plus exclusive enhanced effects and priority support.',
-                        features: ['50+ Video transitions', '30 Thumbnail templates (PSD)', '20 Animated overlays', '15 Intro/outro templates', 'Premium sound FX', 'Priority support', 'Lifetime updates'],
+                        description: 'Enhanced effects pack with premium motion graphics and animated elements for serious creators.',
+                        features: ['50+ Video transitions', '30 Thumbnail templates (PSD)', '20 Animated overlays', '15 Intro/outro templates', 'Premium sound FX', 'Lifetime updates'],
                         price: '£13.50',
                         priceLabel: 'one-time',
                         buyUrl: 'https://vanishunleashed.sell.app/'
@@ -1447,9 +1484,51 @@
             },
             infamous: {
                 name: 'INFAMOUS',
-                title: 'Infamous Master Package',
-                description: 'The complete professional suite. Everything in all packs plus exclusive master content. For creators who want it all with commercial licensing.',
-                features: ['All packs included (200+ assets)', 'Exclusive master templates', 'Custom animation presets', '1-on-1 setup support', 'Commercial license', 'Lifetime updates + new releases'],
+                title: 'Infamous Pack',
+                description: 'Choose your tier - from specialized SP/RDR packs to the complete Master package with everything included.',
+                hasTiers: true,
+                tiers: {
+                    master: {
+                        title: 'Infamous Master Package',
+                        description: 'The complete professional suite. Everything in all packs plus exclusive master content. For creators who want it all with commercial licensing.',
+                        features: ['All packs included (200+ assets)', 'Exclusive master templates', 'Custom animation presets', '1-on-1 setup support', 'Commercial license', 'Lifetime updates + new releases'],
+                        price: '£125',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    enhanced: {
+                        title: 'Infamous Enhanced Full Plus',
+                        description: 'Premium collection with enhanced effects and templates. Full access to the enhanced content library.',
+                        features: ['120+ Video transitions', '60 Thumbnail templates (PSD)', '50 Motion graphics', '30 Intro/outro templates', 'Full sound library', 'Lifetime updates'],
+                        price: '£40',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    legacy: {
+                        title: 'Infamous Legacy Full Plus',
+                        description: 'Classic essentials pack with the original Infamous effects that built our reputation.',
+                        features: ['80+ Video transitions', '40 Thumbnail templates (PSD)', '30 Motion graphics', '20 Intro/outro templates', 'Sound effects pack', 'Lifetime updates'],
+                        price: '£30',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    sp: {
+                        title: 'Infamous SP',
+                        description: 'Specialized pack focused on specific content styles. Perfect for niche creators.',
+                        features: ['40+ Video transitions', '20 Thumbnail templates (PSD)', '15 Motion graphics', '10 Intro/outro templates', 'Curated sound FX', 'Lifetime updates'],
+                        price: '£20',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    rdr: {
+                        title: 'Infamous RDR',
+                        description: 'Specialized RDR-themed pack with unique effects and templates for gaming content.',
+                        features: ['40+ Video transitions', '20 Thumbnail templates (PSD)', '15 Motion graphics', '10 Intro/outro templates', 'Gaming sound FX', 'Lifetime updates'],
+                        price: '£20',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    }
+                },
                 price: '£125',
                 priceLabel: 'one-time',
                 buyUrl: 'https://vanishunleashed.sell.app/'
@@ -1467,16 +1546,36 @@
 
         let currentPack = null;
         let currentTier = 'mvp';
+        let currentInfamousTier = 'master';
 
         function selectTier(tier) {
             currentTier = tier;
 
             // Update active button
-            document.querySelectorAll('.tier-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.nenyooo-tiers .tier-btn').forEach(btn => btn.classList.remove('active'));
             event.target.closest('.tier-btn').classList.add('active');
 
             // Update modal content with tier data
             const tierData = packData.nenyooo.tiers[tier];
+            document.getElementById('modalTitle').textContent = tierData.title;
+            document.getElementById('modalDescription').textContent = tierData.description;
+
+            const featuresEl = document.getElementById('modalFeatures');
+            featuresEl.innerHTML = tierData.features.map(f => `<li>${f}</li>`).join('');
+
+            const priceEl = document.getElementById('modalPrice');
+            priceEl.innerHTML = tierData.price + ` <span>${tierData.priceLabel}</span>`;
+        }
+
+        function selectInfamousTier(tier) {
+            currentInfamousTier = tier;
+
+            // Update active button
+            document.querySelectorAll('.infamous-tiers .tier-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.tier-btn').classList.add('active');
+
+            // Update modal content with tier data
+            const tierData = packData.infamous.tiers[tier];
             document.getElementById('modalTitle').textContent = tierData.title;
             document.getElementById('modalDescription').textContent = tierData.description;
 
@@ -1495,13 +1594,18 @@
             document.getElementById('modalPackName').className = 'modal-pack-name ' + packId;
             document.getElementById('modalPackName').textContent = pack.name;
 
-            // Show/hide tier selector for Nenyooo
-            const tierSelector = document.getElementById('tierSelector');
+            // Hide both tier selectors first
+            const nenyoooTierSelector = document.getElementById('tierSelector');
+            const infamousTierSelector = document.getElementById('infamousTierSelector');
+            nenyoooTierSelector.style.display = 'none';
+            infamousTierSelector.style.display = 'none';
+
+            // Show tier selector for Nenyooo
             if (packId === 'nenyooo' && pack.hasTiers) {
-                tierSelector.style.display = 'flex';
+                nenyoooTierSelector.style.display = 'flex';
                 // Reset to MVP tier
                 currentTier = 'mvp';
-                document.querySelectorAll('.tier-btn').forEach((btn, i) => {
+                document.querySelectorAll('.nenyooo-tiers .tier-btn').forEach((btn, i) => {
                     btn.classList.toggle('active', i === 0);
                 });
                 // Load MVP tier data
@@ -1513,8 +1617,27 @@
                 const priceEl = document.getElementById('modalPrice');
                 priceEl.className = 'modal-price ' + packId;
                 priceEl.innerHTML = tierData.price + ` <span>${tierData.priceLabel}</span>`;
-            } else {
-                tierSelector.style.display = 'none';
+            }
+            // Show tier selector for Infamous
+            else if (packId === 'infamous' && pack.hasTiers) {
+                infamousTierSelector.style.display = 'flex';
+                // Reset to Master tier
+                currentInfamousTier = 'master';
+                document.querySelectorAll('.infamous-tiers .tier-btn').forEach((btn, i) => {
+                    btn.classList.toggle('active', i === 0);
+                });
+                // Load Master tier data
+                const tierData = pack.tiers.master;
+                document.getElementById('modalTitle').textContent = tierData.title;
+                document.getElementById('modalDescription').textContent = tierData.description;
+                const featuresEl = document.getElementById('modalFeatures');
+                featuresEl.innerHTML = tierData.features.map(f => `<li>${f}</li>`).join('');
+                const priceEl = document.getElementById('modalPrice');
+                priceEl.className = 'modal-price ' + packId;
+                priceEl.innerHTML = tierData.price + ` <span>${tierData.priceLabel}</span>`;
+            }
+            // No tiers
+            else {
                 document.getElementById('modalTitle').textContent = pack.title;
                 document.getElementById('modalDescription').textContent = pack.description;
                 const featuresEl = document.getElementById('modalFeatures');
@@ -1537,6 +1660,7 @@
             document.body.style.overflow = '';
             currentPack = null;
             currentTier = 'mvp';
+            currentInfamousTier = 'master';
         }
 
         function buyPack() {
@@ -1550,6 +1674,8 @@
             let buyUrl;
             if (currentPack === 'nenyooo' && packData.nenyooo.hasTiers) {
                 buyUrl = packData.nenyooo.tiers[currentTier].buyUrl;
+            } else if (currentPack === 'infamous' && packData.infamous.hasTiers) {
+                buyUrl = packData.infamous.tiers[currentInfamousTier].buyUrl;
             } else {
                 buyUrl = packData[currentPack].buyUrl;
             }
