@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | Vanish Video Editing</title>
+    <meta name="description" content="Join Vanish Video Editing as an editor or partner. We're looking for talented video editors and content creators to collaborate with.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #18181b;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #06b6d4;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 11, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.25rem; font-weight: 700; }
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+        }
+
+        main { padding-top: 80px; }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 2rem;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 span {
+            background: linear-gradient(135deg, var(--primary), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section { padding: 60px 2rem; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Opportunity Cards */
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .opportunity-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #a855f7);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .opportunity-card.hiring::before {
+            background: linear-gradient(90deg, var(--success), #10b981);
+        }
+
+        .opportunity-card.partner::before {
+            background: linear-gradient(90deg, var(--warning), #f59e0b);
+        }
+
+        .opportunity-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .opportunity-card.hiring .opportunity-icon {
+            background: rgba(34, 197, 94, 0.15);
+        }
+
+        .opportunity-card.partner .opportunity-icon {
+            background: rgba(245, 158, 11, 0.15);
+        }
+
+        .opportunity-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .opportunity-card.hiring .opportunity-badge {
+            background: var(--success);
+            color: white;
+        }
+
+        .opportunity-card.partner .opportunity-badge {
+            background: var(--warning);
+            color: black;
+        }
+
+        .opportunity-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .opportunity-card > p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .opportunity-perks {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .opportunity-perks li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .opportunity-perks li::before {
+            content: '✓';
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .opportunity-footer {
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .opportunity-card.hiring .opportunity-footer .btn-primary {
+            background: var(--success);
+        }
+
+        .opportunity-card.hiring .opportunity-footer .btn-primary:hover {
+            background: #16a34a;
+        }
+
+        .opportunity-card.partner .opportunity-footer .btn-primary {
+            background: var(--warning);
+            color: black;
+        }
+
+        .opportunity-card.partner .opportunity-footer .btn-primary:hover {
+            background: #d97706;
+        }
+
+        /* Requirements Section */
+        .requirements-section {
+            background: var(--bg-secondary);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .requirements-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .requirements-box h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .requirements-list {
+            list-style: none;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .requirements-list li span {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .benefit-item p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Application Form */
+        .application-section {
+            background: var(--bg-secondary);
+        }
+
+        .application-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group select option {
+            background: var(--bg-card);
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 968px) {
+            .opportunities-grid,
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu { display: flex; }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active { display: flex; }
+
+            .page-header h1 { font-size: 2rem; }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .application-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Vanish<span>Edits</span></a>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packs.html">Packs</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Join <span>Vanish Edits</span></h1>
+            <p>We're looking for talented editors and content creators to join our team or partner with us.</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="opportunities-grid">
+                    <!-- Hiring Card -->
+                    <div class="opportunity-card hiring">
+                        <span class="opportunity-badge">Now Hiring</span>
+                        <div class="opportunity-icon">&#128187;</div>
+                        <h3>Video Editor</h3>
+                        <p>Join our team as a freelance video editor. Work on a variety of projects for YouTubers, businesses, and content creators from around the world.</p>
+                        <ul class="opportunity-perks">
+                            <li>Flexible remote work schedule</li>
+                            <li>Competitive per-project pay</li>
+                            <li>Work with top content creators</li>
+                            <li>Grow your portfolio & skills</li>
+                            <li>No minimum hours required</li>
+                        </ul>
+                        <div class="opportunity-footer">
+                            <a href="#apply" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Partner Card -->
+                    <div class="opportunity-card partner">
+                        <span class="opportunity-badge">Partnership</span>
+                        <div class="opportunity-icon">&#129309;</div>
+                        <h3>Content Creator Partner</h3>
+                        <p>Partner with us for exclusive discounts, priority editing, and collaborative opportunities. Perfect for YouTubers and streamers with regular content needs.</p>
+                        <ul class="opportunity-perks">
+                            <li>Up to 25% discount on all services</li>
+                            <li>Priority turnaround times</li>
+                            <li>Dedicated editor assignment</li>
+                            <li>Feature in our portfolio</li>
+                            <li>Affiliate commission program</li>
+                        </ul>
+                        <div class="opportunity-footer">
+                            <a href="#apply" class="btn btn-primary">Become a Partner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Work With Us</h2>
+                    <p>Join a growing team that values creativity and quality</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#128176;</div>
+                        <h4>Competitive Pay</h4>
+                        <p>Fair compensation for quality work</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#127968;</div>
+                        <h4>Work From Home</h4>
+                        <p>100% remote, work from anywhere</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#128197;</div>
+                        <h4>Flexible Hours</h4>
+                        <p>Set your own schedule</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#128200;</div>
+                        <h4>Career Growth</h4>
+                        <p>Build your skills and portfolio</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="requirements-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What We're Looking For</h2>
+                    <p>Requirements for joining the Vanish Edits team</p>
+                </div>
+                <div class="requirements-grid">
+                    <div class="requirements-box">
+                        <h3>&#128187; For Editors</h3>
+                        <ul class="requirements-list">
+                            <li><span>&#9679;</span> Proficiency in Adobe Premiere Pro, DaVinci Resolve, or Final Cut Pro</li>
+                            <li><span>&#9679;</span> Strong understanding of pacing, storytelling, and visual aesthetics</li>
+                            <li><span>&#9679;</span> Ability to meet deadlines and communicate effectively</li>
+                            <li><span>&#9679;</span> Portfolio of previous editing work (YouTube, social media, etc.)</li>
+                            <li><span>&#9679;</span> Basic knowledge of color grading and audio mixing</li>
+                            <li><span>&#9679;</span> Reliable internet connection and computer setup</li>
+                        </ul>
+                    </div>
+                    <div class="requirements-box">
+                        <h3>&#129309; For Partners</h3>
+                        <ul class="requirements-list">
+                            <li><span>&#9679;</span> Active YouTube channel, Twitch, or social media presence</li>
+                            <li><span>&#9679;</span> Minimum 5K subscribers/followers (flexible for quality content)</li>
+                            <li><span>&#9679;</span> Consistent content creation schedule</li>
+                            <li><span>&#9679;</span> Willingness to credit or mention Vanish Edits</li>
+                            <li><span>&#9679;</span> Professional attitude and communication</li>
+                            <li><span>&#9679;</span> Regular editing needs (at least 2+ videos per month)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section class="application-section" id="apply">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Apply Now</h2>
+                    <p>Fill out the form below and we'll get back to you within 48 hours</p>
+                </div>
+                <div class="application-box">
+                    <form id="applicationForm" onsubmit="submitApplication(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="type">I'm Applying As *</label>
+                                <select id="type" name="type" required>
+                                    <option value="">Select one...</option>
+                                    <option value="editor">Video Editor</option>
+                                    <option value="partner">Content Creator Partner</option>
+                                    <option value="both">Both</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="discord">Discord Username</label>
+                                <input type="text" id="discord" name="discord" placeholder="username#0000">
+                                <p class="form-note">Preferred method of communication</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio / Channel Link *</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://youtube.com/@yourchannel" required>
+                            <p class="form-note">YouTube, Vimeo, portfolio site, or social media</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Experience & Skills *</label>
+                            <textarea id="experience" name="experience" placeholder="Tell us about your editing experience, software you use, and what type of content you specialize in..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="why">Why do you want to join Vanish Edits?</label>
+                            <textarea id="why" name="why" placeholder="What interests you about working with us?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about joining our team</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">How much do editors get paid?</div>
+                        <div class="faq-answer">
+                            <p>Pay varies based on project complexity and your experience level. On average, editors earn £15-50 per video depending on length and requirements. Top performers can earn significantly more.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How does the partner program work?</div>
+                        <div class="faq-answer">
+                            <p>Partners receive discounted rates (up to 25% off), priority turnaround, and a dedicated editor. You can also earn commission by referring other creators to our services.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is this a full-time or part-time position?</div>
+                        <div class="faq-answer">
+                            <p>Our editor positions are freelance-based. You can work as much or as little as you want. Take on projects when you're available and decline when you're busy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What software do I need?</div>
+                        <div class="faq-answer">
+                            <p>We primarily work with Adobe Premiere Pro, DaVinci Resolve, and Final Cut Pro. Having After Effects is a plus for motion graphics work.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long does the application process take?</div>
+                        <div class="faq-answer">
+                            <p>We typically review applications within 48 hours. If selected, you'll receive a test project to complete. The entire process usually takes about a week.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vanish Video Editing. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="terms.html">Terms</a> |
+            <a href="terms.html#privacy">Privacy</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        function submitApplication(event) {
+            event.preventDefault();
+            const type = document.getElementById('type').value;
+            const name = document.getElementById('name').value;
+
+            const typeLabels = {
+                'editor': 'Video Editor',
+                'partner': 'Content Creator Partner',
+                'both': 'Editor & Partner'
+            };
+
+            alert(`Thank you for applying, ${name}!\n\nWe've received your ${typeLabels[type]} application and will review it within 48 hours.\n\nWe'll contact you via email or Discord with next steps.`);
+
+            // In production, this would submit to a backend
+            document.getElementById('applicationForm').reset();
+        }
+    </script>
+</body>
+</html>
