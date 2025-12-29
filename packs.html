@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Effects & Template Packs | Vanish Video Editing</title>
-    <meta name="description" content="Premium video editing effect packs and thumbnail templates. Scooby, Infamous, Nenyooo, and Riptide packs for content creators.">
+    <title>Video Effects & Template Packs | Transitions, Overlays, Thumbnails</title>
+    <meta name="description" content="Premium video editing effect packs - transitions, overlays, motion graphics, thumbnail templates & sound effects. Scooby, Infamous, Nenyooo, Riptide packs. Free starter pack available.">
+    <meta name="keywords" content="video effects pack, video transitions, YouTube thumbnail templates, motion graphics pack, video overlays, premiere pro presets, davinci resolve effects, video editing assets, content creator templates, gaming effects, intro templates, lower thirds">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Video Effects & Template Packs | Vanish">
+    <meta property="og:description" content="Premium video effects, transitions, thumbnails & templates. Free starter pack available. Instant download.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -774,6 +778,131 @@
             font-weight: 600;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pack-card {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .pack-card:nth-child(1) { animation-delay: 0.1s; }
+        .pack-card:nth-child(2) { animation-delay: 0.2s; }
+        .pack-card:nth-child(3) { animation-delay: 0.3s; }
+        .pack-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .pack-card.infamous .pack-badge {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--bg);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .check {
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+
+        .comparison-table .cross {
+            color: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        .th-scooby { color: var(--scooby); }
+        .th-nenyooo { color: var(--nenyooo); }
+        .th-riptide { color: var(--riptide); }
+        .th-infamous { color: var(--infamous); }
+
+        /* Tier Selector */
+        .tier-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tier-btn {
+            flex: 1;
+            padding: 0.75rem 0.5rem;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .tier-btn:hover {
+            border-color: var(--nenyooo);
+            color: var(--text);
+        }
+
+        .tier-btn.active {
+            border-color: var(--nenyooo);
+            background: rgba(236, 72, 153, 0.1);
+            color: var(--nenyooo);
+        }
+
+        .tier-btn .tier-name {
+            display: block;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tier-btn .tier-price {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -916,23 +1045,23 @@
                     <!-- Nenyooo Pack -->
                     <div class="pack-card nenyooo">
                         <div class="pack-banner">
-                            <span class="pack-badge">VIP</span>
+                            <span class="pack-badge">3 Tiers</span>
                             <div class="pack-logo">NENYOOO</div>
                         </div>
                         <div class="pack-content">
-                            <h3>Nenyooo VIP Enhanced</h3>
-                            <p class="description">Enhanced effects pack with premium motion graphics and animated elements.</p>
+                            <h3>Nenyooo Pack</h3>
+                            <p class="description">Choose from MVP, VIP Legacy, or VIP Enhanced tiers with premium motion graphics.</p>
                             <ul class="pack-features">
-                                <li>50+ Video transitions</li>
-                                <li>30 Thumbnail templates (PSD)</li>
-                                <li>20 Animated overlays</li>
-                                <li>15 Intro/outro templates</li>
+                                <li>MVP - Essential starter effects</li>
+                                <li>VIP Legacy - Classic collection</li>
+                                <li>VIP Enhanced - Full premium suite</li>
+                                <li>Up to 50+ transitions</li>
                                 <li>Premium sound FX</li>
                                 <li>Lifetime updates</li>
                             </ul>
                             <div class="pack-footer">
-                                <div class="pack-price">£13.50 <span>one-time</span></div>
-                                <button class="pack-btn" onclick="openPackModal('nenyooo')">Get Pack</button>
+                                <div class="pack-price">From £8 <span>one-time</span></div>
+                                <button class="pack-btn" onclick="openPackModal('nenyooo')">Choose Tier</button>
                             </div>
                         </div>
                     </div>
@@ -1002,6 +1131,101 @@
                         <span class="free-feature">2 Color presets</span>
                     </div>
                     <button class="btn btn-primary" onclick="openPackModal('free')" style="padding: 0.875rem 2rem;">Download Free Pack</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Compare Packs</h2>
+                    <p>Find the perfect pack for your needs</p>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="th-scooby">Scooby</th>
+                                <th class="th-nenyooo">Nenyooo</th>
+                                <th class="th-riptide">Riptide</th>
+                                <th class="th-infamous">Infamous</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Video Transitions</td>
+                                <td>25+</td>
+                                <td>50+</td>
+                                <td>100+</td>
+                                <td>200+</td>
+                            </tr>
+                            <tr>
+                                <td>Thumbnail Templates</td>
+                                <td>15</td>
+                                <td>30</td>
+                                <td>50</td>
+                                <td>100+</td>
+                            </tr>
+                            <tr>
+                                <td>Motion Graphics</td>
+                                <td>10</td>
+                                <td>20</td>
+                                <td>40</td>
+                                <td>80+</td>
+                            </tr>
+                            <tr>
+                                <td>Sound Effects</td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Intro/Outro Templates</td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td>15</td>
+                                <td>25</td>
+                                <td>50+</td>
+                            </tr>
+                            <tr>
+                                <td>Color Presets (LUTs)</td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Priority Support</td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Commercial License</td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>1-on-1 Setup Support</td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="cross">&#10005;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Price</strong></td>
+                                <td><strong style="color: var(--scooby);">£15</strong></td>
+                                <td><strong style="color: var(--nenyooo);">£13.50</strong></td>
+                                <td><strong style="color: var(--riptide);">£25</strong></td>
+                                <td><strong style="color: var(--infamous);">£125</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -1127,6 +1351,21 @@
             <div class="modal-content">
                 <h3 id="modalTitle"></h3>
                 <p class="modal-description" id="modalDescription"></p>
+                <!-- Tier Selector (only for Nenyooo) -->
+                <div class="tier-selector" id="tierSelector" style="display: none;">
+                    <button class="tier-btn active" onclick="selectTier('mvp')">
+                        <span class="tier-name">MVP</span>
+                        <span class="tier-price">£8</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectTier('legacy')">
+                        <span class="tier-name">VIP Legacy</span>
+                        <span class="tier-price">£10</span>
+                    </button>
+                    <button class="tier-btn" onclick="selectTier('enhanced')">
+                        <span class="tier-name">VIP Enhanced</span>
+                        <span class="tier-price">£13.50</span>
+                    </button>
+                </div>
                 <ul class="modal-features" id="modalFeatures"></ul>
                 <div class="modal-price-row">
                     <div class="modal-price" id="modalPrice"></div>
@@ -1164,9 +1403,35 @@
             },
             nenyooo: {
                 name: 'NENYOOO',
-                title: 'Nenyooo VIP Enhanced',
-                description: 'Enhanced effects pack with premium motion graphics and animated elements. Take your content to the next level with VIP-quality assets.',
-                features: ['50+ Video transitions', '30 Thumbnail templates (PSD)', '20 Animated overlays', '15 Intro/outro templates', 'Premium sound FX', 'Lifetime updates'],
+                title: 'Nenyooo Pack',
+                description: 'Choose your tier - from MVP essentials to VIP Enhanced with premium motion graphics and animated elements.',
+                hasTiers: true,
+                tiers: {
+                    mvp: {
+                        title: 'Nenyooo MVP',
+                        description: 'Essential Nenyooo effects for creators starting out. Great value starter pack with core transitions and templates.',
+                        features: ['20+ Video transitions', '10 Thumbnail templates (PSD)', '8 Animated overlays', 'Basic sound FX', 'Lifetime updates'],
+                        price: '£8',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    legacy: {
+                        title: 'Nenyooo VIP Legacy',
+                        description: 'The original VIP collection with classic effects and templates that made Nenyooo famous.',
+                        features: ['35+ Video transitions', '20 Thumbnail templates (PSD)', '15 Animated overlays', '10 Intro/outro templates', 'Premium sound FX', 'Lifetime updates'],
+                        price: '£10',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    },
+                    enhanced: {
+                        title: 'Nenyooo VIP Enhanced',
+                        description: 'The ultimate Nenyooo experience with all assets plus exclusive enhanced effects and priority support.',
+                        features: ['50+ Video transitions', '30 Thumbnail templates (PSD)', '20 Animated overlays', '15 Intro/outro templates', 'Premium sound FX', 'Priority support', 'Lifetime updates'],
+                        price: '£13.50',
+                        priceLabel: 'one-time',
+                        buyUrl: 'https://vanishunleashed.sell.app/'
+                    }
+                },
                 price: '£13.50',
                 priceLabel: 'one-time',
                 buyUrl: 'https://vanishunleashed.sell.app/'
@@ -1201,6 +1466,26 @@
         };
 
         let currentPack = null;
+        let currentTier = 'mvp';
+
+        function selectTier(tier) {
+            currentTier = tier;
+
+            // Update active button
+            document.querySelectorAll('.tier-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.tier-btn').classList.add('active');
+
+            // Update modal content with tier data
+            const tierData = packData.nenyooo.tiers[tier];
+            document.getElementById('modalTitle').textContent = tierData.title;
+            document.getElementById('modalDescription').textContent = tierData.description;
+
+            const featuresEl = document.getElementById('modalFeatures');
+            featuresEl.innerHTML = tierData.features.map(f => `<li>${f}</li>`).join('');
+
+            const priceEl = document.getElementById('modalPrice');
+            priceEl.innerHTML = tierData.price + ` <span>${tierData.priceLabel}</span>`;
+        }
 
         function openPackModal(packId) {
             currentPack = packId;
@@ -1209,15 +1494,35 @@
             document.getElementById('modalPreview').className = 'modal-preview ' + packId;
             document.getElementById('modalPackName').className = 'modal-pack-name ' + packId;
             document.getElementById('modalPackName').textContent = pack.name;
-            document.getElementById('modalTitle').textContent = pack.title;
-            document.getElementById('modalDescription').textContent = pack.description;
 
-            const featuresEl = document.getElementById('modalFeatures');
-            featuresEl.innerHTML = pack.features.map(f => `<li>${f}</li>`).join('');
-
-            const priceEl = document.getElementById('modalPrice');
-            priceEl.className = 'modal-price ' + packId;
-            priceEl.innerHTML = pack.price + (pack.priceLabel ? ` <span>${pack.priceLabel}</span>` : '');
+            // Show/hide tier selector for Nenyooo
+            const tierSelector = document.getElementById('tierSelector');
+            if (packId === 'nenyooo' && pack.hasTiers) {
+                tierSelector.style.display = 'flex';
+                // Reset to MVP tier
+                currentTier = 'mvp';
+                document.querySelectorAll('.tier-btn').forEach((btn, i) => {
+                    btn.classList.toggle('active', i === 0);
+                });
+                // Load MVP tier data
+                const tierData = pack.tiers.mvp;
+                document.getElementById('modalTitle').textContent = tierData.title;
+                document.getElementById('modalDescription').textContent = tierData.description;
+                const featuresEl = document.getElementById('modalFeatures');
+                featuresEl.innerHTML = tierData.features.map(f => `<li>${f}</li>`).join('');
+                const priceEl = document.getElementById('modalPrice');
+                priceEl.className = 'modal-price ' + packId;
+                priceEl.innerHTML = tierData.price + ` <span>${tierData.priceLabel}</span>`;
+            } else {
+                tierSelector.style.display = 'none';
+                document.getElementById('modalTitle').textContent = pack.title;
+                document.getElementById('modalDescription').textContent = pack.description;
+                const featuresEl = document.getElementById('modalFeatures');
+                featuresEl.innerHTML = pack.features.map(f => `<li>${f}</li>`).join('');
+                const priceEl = document.getElementById('modalPrice');
+                priceEl.className = 'modal-price ' + packId;
+                priceEl.innerHTML = pack.price + (pack.priceLabel ? ` <span>${pack.priceLabel}</span>` : '');
+            }
 
             const buyBtn = document.getElementById('modalBuyBtn');
             buyBtn.className = 'modal-buy-btn ' + packId;
@@ -1231,6 +1536,7 @@
             document.getElementById('packModal').classList.remove('active');
             document.body.style.overflow = '';
             currentPack = null;
+            currentTier = 'mvp';
         }
 
         function buyPack() {
@@ -1241,9 +1547,14 @@
                 return;
             }
 
-            const pack = packData[currentPack];
-            if (pack.buyUrl) {
-                window.open(pack.buyUrl, '_blank');
+            let buyUrl;
+            if (currentPack === 'nenyooo' && packData.nenyooo.hasTiers) {
+                buyUrl = packData.nenyooo.tiers[currentTier].buyUrl;
+            } else {
+                buyUrl = packData[currentPack].buyUrl;
+            }
+            if (buyUrl) {
+                window.open(buyUrl, '_blank');
             }
         }
 

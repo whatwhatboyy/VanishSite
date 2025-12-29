@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanish Video Editing | Professional Video Editing Services</title>
-    <meta name="description" content="Professional video editing services for YouTubers, content creators, and businesses. Fast turnaround, affordable pricing, and quality results.">
+    <title>Vanish Video Editing | Professional Video Editing Services for YouTubers & Creators</title>
+    <meta name="description" content="Professional video editing services for YouTubers, content creators, streamers, and businesses. Fast 3-5 day turnaround, affordable pricing, unlimited revisions. YouTube editing, TikTok clips, podcast editing & more.">
+    <meta name="keywords" content="video editing services, YouTube video editor, content creator editing, professional video editing, TikTok editing, podcast editing, video editor for hire, affordable video editing, fast video editing, freelance video editor, social media video editing, gaming video editor, vlog editing, thumbnail design">
+    <meta name="author" content="Vanish Video Editing">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Vanish Video Editing | Professional Video Editing Services">
+    <meta property="og:description" content="Transform your raw footage into stunning videos. Professional editing for YouTubers, creators & businesses. Pay only when satisfied.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vanish Video Editing">
+    <meta name="twitter:description" content="Professional video editing services. Fast turnaround, affordable pricing, unlimited revisions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,6 +61,21 @@
             50% { opacity: 0.5; }
         }
 
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.5); }
+        }
+
         .animate-in {
             animation: fadeInUp 0.6s ease-out forwards;
         }
@@ -59,6 +83,23 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), #a855f7, #ec4899, var(--primary));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite;
+        }
 
         a {
             color: inherit;
@@ -790,13 +831,13 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-badge">
+                <div class="hero-badge floating">
                     <span>&#9679;</span> Available for new projects
                 </div>
-                <h1>Professional <span>Video Editing</span> Services</h1>
+                <h1>Professional <span class="gradient-text">Video Editing</span> Services</h1>
                 <p>Transform your raw footage into stunning, engaging videos. Fast turnaround, affordable pricing, and quality results for YouTubers, businesses, and content creators.</p>
                 <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary">View Pricing</a>
+                    <a href="services.html" class="btn btn-primary glow-effect">View Pricing</a>
                     <a href="portfolio.html" class="btn btn-secondary">See Our Work</a>
                 </div>
                 <div class="trust-badges">
@@ -968,6 +1009,37 @@
                                 <h4>Mike R.</h4>
                                 <span>Marketing Manager</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator Types -->
+                <div style="margin-top: 4rem; text-align: center;">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Trusted by creators in</p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#127918;</span>
+                            <span>Gaming</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#127908;</span>
+                            <span>Vlogs</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#127897;</span>
+                            <span>Podcasts</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#128188;</span>
+                            <span>Business</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#127911;</span>
+                            <span>Music</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted);">
+                            <span style="font-size: 1.25rem;">&#128218;</span>
+                            <span>Education</span>
                         </div>
                     </div>
                 </div>
